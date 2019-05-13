@@ -1,0 +1,143 @@
+#container {
+	background-image: none;
+	margin: 0;
+}
+#header {
+	background-image: none;
+	height: 100px;
+}
+#uvic-elc {
+	display:none;
+}
+#content {
+	clear:none;
+	font-size:75%;
+	margin:0;
+	padding:0;
+}
+#sitetitle {
+	position: absolute;
+	top: 16px;
+	left: auto;
+	right: 60px;
+	font-size: 28px;
+}
+#sitetitle a {
+	color:#333333;
+	text-decoration: none;
+}
+#spacer {
+	visibility: hidden;
+	display: none;
+}
+.helpbutton {
+	visibility: hidden;
+	display: none;
+}
+#searchbox {
+	visibility: hidden;
+	display: none;
+}
+#breadcrumb {
+	font-size: 0.875em;
+	color: #000;
+	position: absolute;
+	top: 64px; 
+	left: 0;
+	padding: 12px 0 10px 0;
+	margin-right: 20px;
+	line-height: 1.3em;
+}
+#breadcrumb a {
+	color: #000;
+	text-decoration: none;
+	font-weight: normal;
+}
+#breadcrumb ul li {
+	color: #000;
+}
+
+/******* content *******/
+
+#news {
+	visibility: hidden;
+	display: none;
+}
+.menu-instructions {
+	visibility: hidden;
+	display: none;
+}
+#exerciselink {
+	visibility: hidden;
+	display: none;
+}
+#BottomNavBar {
+	visibility: hidden;
+	display: none;
+}
+#grower {
+	width:100%;
+}
+/* Tooltip */ 
+.tooltip-above:after, .tooltip-below:after {
+	background: rgba(0,0,0,.8); /* box colour */
+}
+
+/* Table with Header Row */
+.table-horizontal-lines th {
+	border-bottom: 2px solid #000;
+}
+.table-horizontal-lines td {
+	border-top: 1px solid #ffffff;
+	border-right: 1px solid #ffffff; 
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #ffffff; 
+}
+
+/* Table with Header Column */
+.table-vertical-lines th {
+	border-right: 2px solid #000;
+}
+
+/* zebra column shading */
+.zebra-odd {
+	background-color: #CCC;
+}
+.zebra-even {
+	background-color: #999;
+}
+.column-odd {
+	background-color: #CCC;
+}
+.column-even {
+	background-color: #999;
+}
+
+
+
+/******* footer *******/
+
+/*
+#footer {
+	visibility: hidden;
+	display: none; 
+} */
+
+.exerciselinkintro, .topbutton, .sharebutton {
+	visibility: hidden;
+	display: none; 
+}
+
+#footercontact {
+	visibility: visible !important;
+	display: block !important;
+
+	color: #000000;
+	font-size: 0.675em;
+	line-height: 1.6em;
+	padding: 1.4em 3.5em 1.4em 0;
+	right:auto;
+	text-align: right;
+}
+
+

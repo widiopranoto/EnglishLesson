@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/raven-steals-the-light2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:53 GMT -->
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+<title>ELC Study Zone: Raven Steals the Light - Exercise 2</title>
+<script language="JavaScript" type="text/javascript">
+
+var RightChar = ':-)';
+var WrongChar = 'X';
+var YourScoreIs = 'Your score is:';
+var DefaultPrompt = 'Which is the next part of the story?';
+var StorySoFar = '';
+
+var CurrentAnswer = '';
+var GuessesSoFar = 0;
+var CurrentNumber = 0;
+var CurrentCorrect = 0;
+var Points = 0;
+var TotalSegments = 0;
+var LastThree = '';
+var SwitchFlag = 'WholeText';
+
+var IndexButton = '<form method=post><INPUT TYPE=\"Button\" NAME=\"Index\" VALUE=\"Go back to contents\" onClick="parent.location=\'index.htm\'"></FORM>';
+//'<BR><FORM><INPUT TYPE=\"Button\" VALUE=\"[Index]\" onClick=\"parent.location=\'index.htm\'\"></FORM>';
+
+Segments = new Array();
+
+WinSegments = new Array();
+
+WinSegments[1] = 'In the beginning there was no light ';
+WinSegments[2] = 'in the world, because an old magician kept ';
+WinSegments[3] = 'it hidden in a box inside his house. Raven, who was ';
+WinSegments[4] = 'always hungry, didn\'t like the darkness because ';
+WinSegments[5] = 'it was difficult to find food. One day he ';
+WinSegments[6] = 'was looking for food near the old magician\'s house. He heard ';
+WinSegments[7] = 'a voice saying, "I have a box, and inside this box is ';
+WinSegments[8] = 'another box, and inside this there is another box, and inside ';
+WinSegments[9] = 'the smallest box is all the light in the world." Raven ';
+WinSegments[10] = 'decided to steal the light. Raven waited until the old man\'s daughter went ';
+WinSegments[11] = 'down to the river to collect water. Just as she ';
+WinSegments[12] = 'was dipping her basket into the river, he changed ';
+WinSegments[13] = 'himself into a hemlock needle. The needle floated ';
+WinSegments[14] = 'into her basket. When the girl ';
+WinSegments[15] = 'drank some water, she swallowed Raven too. Inside ';
+WinSegments[16] = 'the girl\'s belly Raven took the form of a human ';
+WinSegments[17] = 'baby. He grew and grew, and ';
+WinSegments[18] = 'in time she gave birth to a ';
+WinSegments[19] = 'funny looking child with black eyes and ';
+WinSegments[20] = 'a big nose. The old man loved ';
+WinSegments[21] = 'his grandson so much that he gave in ';
+WinSegments[22] = 'to the child\'s every wish. Raven became ';
+WinSegments[23] = 'spoilt and greedy. He was bored with ';
+WinSegments[24] = 'all his toys, and wanted to play with the box that held ';
+WinSegments[25] = 'the light. Finally the grandfather opened ';
+WinSegments[26] = 'the box and tossed the glowing ball of light to Raven. As soon as Raven ';
+WinSegments[27] = 'caught the light, he immediately changed into ';
+WinSegments[28] = 'his bird form. Holding the light ';
+WinSegments[29] = 'in his beak, he flew up the chimney hole ';
+WinSegments[30] = 'into the dark world. The magician ';
+WinSegments[31] = 'was angry. He wanted to get ';
+WinSegments[32] = 'the light back into his box. He flew after Raven. The light was ';
+WinSegments[33] = 'heavy in Raven\'s beak, and he was getting ';
+WinSegments[34] = 'tired. The magician was coming closer. Raven broke off ';
+WinSegments[35] = 'some pieces of the light and threw them ';
+WinSegments[36] = 'into the sky. They became the stars. The magician ';
+WinSegments[37] = 'was still coming closer, so Raven ';
+WinSegments[38] = 'broke off another piece of the light and threw ';
+WinSegments[39] = 'it into the sky. It became ';
+WinSegments[40] = 'the moon. Finally Raven became so ';
+WinSegments[41] = 'tired that he tossed the last and biggest ';
+WinSegments[42] = 'piece of the light into the sky. It became ';
+WinSegments[43] = 'the sun; and that is how daylight came to the world. ';
+
+
+MacSegments = new Array();
+
+MacSegments[1] = 'In the beginning there was no light ';
+MacSegments[2] = 'in the world, because an old magician kept ';
+MacSegments[3] = 'it hidden in a box inside his house. Raven, who was ';
+MacSegments[4] = 'always hungry, didn\'t like the darkness because ';
+MacSegments[5] = 'it was difficult to find food. One day he ';
+MacSegments[6] = 'was looking for food near the old magician\'s house. He heard ';
+MacSegments[7] = 'a voice saying, "I have a box, and inside this box is ';
+MacSegments[8] = 'another box, and inside this there is another box, and inside ';
+MacSegments[9] = 'the smallest box is all the light in the world." Raven ';
+MacSegments[10] = 'decided to steal the light. Raven waited until the old man\'s daughter went ';
+MacSegments[11] = 'down to the river to collect water. Just as she ';
+MacSegments[12] = 'was dipping her basket into the river, he changed ';
+MacSegments[13] = 'himself into a hemlock needle. The needle floated ';
+MacSegments[14] = 'into her basket. When the girl ';
+MacSegments[15] = 'drank some water, she swallowed Raven too. Inside ';
+MacSegments[16] = 'the girl\'s belly Raven took the form of a human ';
+MacSegments[17] = 'baby. He grew and grew, and ';
+MacSegments[18] = 'in time she gave birth to a ';
+MacSegments[19] = 'funny looking child with black eyes and ';
+MacSegments[20] = 'a big nose. The old man loved ';
+MacSegments[21] = 'his grandson so much that he gave in ';
+MacSegments[22] = 'to the child\'s every wish. Raven became ';
+MacSegments[23] = 'spoilt and greedy. He was bored with ';
+MacSegments[24] = 'all his toys, and wanted to play with the box that held ';
+MacSegments[25] = 'the light. Finally the grandfather opened ';
+MacSegments[26] = 'the box and tossed the glowing ball of light to Raven. As soon as Raven ';
+MacSegments[27] = 'caught the light, he immediately changed into ';
+MacSegments[28] = 'his bird form. Holding the light ';
+MacSegments[29] = 'in his beak, he flew up the chimney hole ';
+MacSegments[30] = 'into the dark world. The magician ';
+MacSegments[31] = 'was angry. He wanted to get ';
+MacSegments[32] = 'the light back into his box. He flew after Raven. The light was ';
+MacSegments[33] = 'heavy in Raven\'s beak, and he was getting ';
+MacSegments[34] = 'tired. The magician was coming closer. Raven broke off ';
+MacSegments[35] = 'some pieces of the light and threw them ';
+MacSegments[36] = 'into the sky. They became the stars. The magician ';
+MacSegments[37] = 'was still coming closer, so Raven ';
+MacSegments[38] = 'broke off another piece of the light and threw ';
+MacSegments[39] = 'it into the sky. It became ';
+MacSegments[40] = 'the moon. Finally Raven became so ';
+MacSegments[41] = 'tired that he tossed the last and biggest ';
+MacSegments[42] = 'piece of the light into the sky. It became ';
+MacSegments[43] = 'the sun; and that is how daylight came to the world. ';
+
+var platform = 'win';
+
+function Initialize(){
+
+	if (navigator.appVersion.indexOf('Mac') != -1) {
+		platform = 'mac';
+	}
+
+	if (platform == 'win'){
+		for (i = 1; i < WinSegments.length; i++){
+			Segments[i] = unescape(WinSegments[i]);
+		}
+	}
+	else {
+		for (i = 1; i < MacSegments.length; i++){
+			Segments[i] = unescape(MacSegments[i]);
+		}
+	}
+
+	TotalSegments = Segments.length - 1;
+
+	CurrentNumber = 1;
+	ShowQuestion();
+	Points = 0;
+	ThisQScore = 2;
+	document.StoryForm.Story.value = '';
+	StorySoFar = '';
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+}
+
+function ShowQuestion(){
+
+//Deal with the new paragraph thing
+
+	if (Segments[CurrentNumber] == '[NewPara]'){
+		StorySoFar += unescape('%0D%0A%0D%0A');
+		Segments[CurrentNumber] = unescape('%0D%0A%0D%0A');
+		Points += 2;
+		CurrentNumber++;
+	}
+
+//Deal with the last two segment situation
+	if (CurrentNumber == TotalSegments - 1){
+
+		var Temp = 1 + Math.floor(2 * Math.random());
+		document.QuizForm.Guess1.value = Segments[TotalSegments];
+		document.QuizForm.Guess2.value = Segments[TotalSegments];
+		document.QuizForm.Guess3.value = '';
+
+		document.QuizForm.elements[(Temp*Temp)].value = Segments[CurrentNumber];
+		CurrentCorrect = Temp;
+		CurrentAnswer = Segments[CurrentNumber];
+		ThisQScore = 1;
+		return;
+	}
+	
+
+	var FirstDistractor = 0;
+	var SecondDistractor = 0;
+	var Range = TotalSegments - CurrentNumber;
+
+
+	FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	while (Segments[FirstDistractor] == '[NewPara]'){
+		FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	SecondDistractor = FirstDistractor;
+	while ((SecondDistractor == FirstDistractor)||(Segments[SecondDistractor] == '[NewPara]')){
+		SecondDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	ThreeSegments = new Array(3);
+	ThreeSegments[1] = Segments[CurrentNumber];
+	ThreeSegments[2] = Segments[FirstDistractor];
+	ThreeSegments[3] = Segments[SecondDistractor];
+
+	CurrentAnswer = Segments[CurrentNumber];
+
+	MixedSegments = new Array(3);
+
+	var j = 3;
+	var i = 1;
+	var Temp = 0;
+	for (i = 1; i < 4; i++)  {
+
+		Temp = 1 + Math.floor(j  *  Math.random());
+		MixedSegments[i] = ThreeSegments[Temp];
+
+		for (k=Temp; k < j; k++) {
+			ThreeSegments[k] = ThreeSegments[k+1];
+		}
+		j = j - 1;
+	}
+
+	for (i=1; i<4; i++){
+		if (MixedSegments[i] == CurrentAnswer){
+			CurrentCorrect = i;
+		}
+	}
+
+	document.QuizForm.Guess1.value = MixedSegments[1];
+	document.QuizForm.Guess2.value = MixedSegments[2];
+	document.QuizForm.Guess3.value = MixedSegments[3];
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+
+	ThisQScore = 2;
+
+}
+
+function CheckAnswer(Chosen){
+
+	if (CurrentNumber == TotalSegments){
+		return;
+	}
+
+	if (CurrentCorrect == Chosen){
+		StorySoFar += CurrentAnswer;
+
+		if (CurrentNumber == 1){
+			LastThree = Segments[1];
+		}
+
+		if (CurrentNumber == 2){
+			LastThree = Segments[1] + Segments[2];
+		}
+
+		if (CurrentNumber > 2){
+				LastThree = Segments[CurrentNumber - 2] + Segments[CurrentNumber - 1] + Segments[CurrentNumber];
+		}
+
+
+		if (CurrentNumber == TotalSegments - 1){
+			StorySoFar += Segments[TotalSegments];
+			LastThree += Segments[TotalSegments];
+		}
+
+		if (SwitchFlag == 'WholeText'){
+			document.StoryForm.Story.value = StorySoFar;
+		}
+		else{
+			document.StoryForm.Story.value = LastThree;
+		}
+	
+		CurrentNumber++;
+		Points += ThisQScore;
+		
+		if (CurrentNumber < TotalSegments){
+			var CurrentScore = Math.floor(100*Points/(2*(CurrentNumber-1)));
+			document.QuizForm.ScoreBox.value = CurrentScore + '%';
+			ShowQuestion();
+		}
+		else{
+			document.QuizForm.Guess1.value = 'WELL DONE!';
+			document.QuizForm.Guess2.value = 'YOU HAVE COMPLETED';
+			document.QuizForm.Guess3.value = 'THE STORY!';
+			var FinalScore = Math.floor(100*Points/((2*TotalSegments) - 3));
+			document.QuizForm.ScoreBox.value = FinalScore + '%';
+		}	
+	}
+	else{
+		document.QuizForm.elements[(Chosen*3)-1].value = WrongChar;
+		document.QuizForm.ScoreBox.value = '';
+		if (ThisQScore > 0){
+			ThisQScore--;
+		}
+	}
+}
+
+function SwitchStuff(WhichButton){
+	SwitchFlag = WhichButton;
+	if (SwitchFlag == 'WholeText'){
+		document.StoryForm.Story.value = StorySoFar;
+	}
+	else{
+		document.StoryForm.Story.value = LastThree;
+	}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../css/sz-simple.css" />
+<link rel="stylesheet" type="text/css" href="../../css/sz-print.css" media="print" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28427007-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body onLoad="Initialize()">
+<div id="container">
+  <div id="header"><a name="top"></a>
+    <div id="uvic-elc"><a href="https://www.uvic.ca/"><img src="../../images/logo-uvic.gif" border="0" /></a><a href="../../index.html"><img src="../../images/logo-elc.gif" border="0" /></a></div>
+    <div id="sitetitle"><a href="../../index.html">Study Zone</a><br /></div>
+    <div id="searchbox">
+    <form action="https://web2.uvcs.uvic.ca/courses/elc/studyzone/results.htm" id="searchbox_013621260945567203807:sjxzc9x3aqa">
+      <input type="hidden" name="cx" value="013621260945567203807:sjxzc9x3aqa" />
+      <input type="hidden" name="cof" value="FORID:9" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="button" name="help" value="Help" id="helpbtn" class="searchbutton" onclick="location.href='../../help/index.html'" />
+        <input type="text" name="q" size="25" class="searchinput" />
+      <input type="submit" name="sa" value="Search" class="searchbutton" />
+          </form>
+  </div>
+  </div>
+  <div id="breadcrumb">
+    <ul>
+      <li class="homebutton"><a href="../../index.html">Home</a></li>
+      <li>&#187;&nbsp;<a href="../index.html">Level 330 &#8212; Lower Intermediate</a></li>
+      <li>&#187;&nbsp;<a href="index.html">Reading Topics</a></li>
+      <li>&#187;&nbsp;Raven Steals the Light: Exercise 2</li>
+    </ul>
+  </div>
+  <div id="content">
+    <h2 align="center">Raven Steals the Light: Recreating the Story</h2>
+    <p>Build the story by choosing one of the three sentences. Use the <strong>A</strong>, <strong>B</strong>, or <strong>C</strong> buttons. If your choice is correct, the sentence will be added to the story.</p>
+    <form name="QuizForm" id="QuizForm" onsubmit="return false">
+      <table border="0">
+        <tr>
+          <td><input type="button" name="Check1" value="   A   " onclick="CheckAnswer(1)" /></td>
+          <td><input type="EDIT" name="Guess1" size="75" maxlength="80" onfocus="CheckAnswer(1); blur()" /></td>
+          <td><input type="EDIT" name="Result1" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check2" value="   B   " onclick="CheckAnswer(2)" /></td>
+          <td><input type="EDIT" name="Guess2" size="75" maxlength="80" onfocus="CheckAnswer(2); blur()" /></td>
+          <td><input type="EDIT" name="Result2" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check3" value="   C   " onclick="CheckAnswer(3)" /></td>
+          <td><input type="EDIT" name="Guess3" size="75" maxlength="80" onfocus="CheckAnswer(3); blur()" /></td>
+          <td><input type="EDIT" name="Result3" size="3" maxlength="3" /></td>
+        </tr>
+      </table>
+      <p>Score
+        <input type="text" name="ScoreBox" size="5" maxlength="5" />
+      </p>
+    </form>
+    <form name="StoryForm" id="StoryForm">
+      <textarea style="width:80%" name="Story" rows="18" cols="100" wrap="virtual"></textarea>
+      <p>
+        <input type="button" name="ReStart" value="Restart" onclick="Initialize()" />
+      </p>
+    </form>
+    <div id="exerciselink"><a href="raven-steals-the-light3.html"><strong>Next exercise</strong></a></div>
+  </div>
+  <div id="footer">    <div class="topbutton"><a href="#top">Top of page</a></div>
+    <div class="sharebutton"> 
+      <!-- Share BEGIN --> 
+      <a class="a2a_dd" href="https://www.addtoany.com/share_save">Share this page ...</a> 
+      <script type="text/javascript" src="../../../../../../static.addtoany.com/menu/page.js"></script> 
+      <!-- Share END --> 
+    </div>
+<div id="footercontact"><strong>Comments?</strong> Visit the <a href="https://blog.uvcs.uvic.ca/elc-studyzone/feedback/" target="_blank"><strong>Feedback Page</strong></a> on our blog!<br />
+  Created by the <a href="https://www.uvic.ca/elc/" target="_blank"><strong>University of Victoria English Language Centre</strong></a><br />
+      <strong><a href="../../terms/index.html">Terms of Use</a></strong>&nbsp;&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_GB" target="_blank" rel="license"><img alt="Creative Commons Licence" class="cc" src="../../../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png" /></a>&nbsp;&nbsp;Published 2013</div>
+
+  </div>
+</div>
+</body>
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/raven-steals-the-light2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:53 GMT -->
+</html>

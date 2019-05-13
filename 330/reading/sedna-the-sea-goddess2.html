@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/sedna-the-sea-goddess2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:54 GMT -->
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+<title>ELC Study Zone: Sedna the Sea Goddess - Exercise 2</title>
+<script language="JavaScript" type="text/javascript">
+
+var RightChar = ':-)';
+var WrongChar = 'X';
+var YourScoreIs = 'Your score is:';
+var DefaultPrompt = 'Which is the next part of the story?';
+var StorySoFar = '';
+
+var CurrentAnswer = '';
+var GuessesSoFar = 0;
+var CurrentNumber = 0;
+var CurrentCorrect = 0;
+var Points = 0;
+var TotalSegments = 0;
+var LastThree = '';
+var SwitchFlag = 'WholeText';
+
+var IndexButton = '<form method=post><INPUT TYPE=\"Button\" NAME=\"Index\" VALUE=\"Go back to contents\" onClick="parent.location=\'index.htm\'"></FORM>';
+//'<BR><FORM><INPUT TYPE=\"Button\" VALUE=\"[Index]\" onClick=\"parent.location=\'index.htm\'\"></FORM>';
+
+Segments = new Array();
+
+WinSegments = new Array();
+
+WinSegments[1] = 'Sedna was a beautiful Inuit girl who ';
+WinSegments[2] = 'didn\'t want to get married. Many hunters ';
+WinSegments[3] = 'wanted to marry her, but she refused ';
+WinSegments[4] = 'their offers. Her father scolded her, saying, "I am ';
+WinSegments[5] = 'getting older, and soon you will need a good husband who can provide ';
+WinSegments[6] = 'you with food and furs. You must marry the next hunter who ';
+WinSegments[7] = 'asks for you." Sedna still wasn\'t interested. Soon a young ';
+WinSegments[8] = 'hunter from a distant place came to her father\'s camp .  He ';
+WinSegments[9] = 'was dressed in warm furs, and spoke in a soft voice. He ';
+WinSegments[10] = 'promised to provide a good home and ';
+WinSegments[11] = 'plenty of animals for food and clothing. Although ';
+WinSegments[12] = 'he kept his face hidden under his hood, Sedna ';
+WinSegments[13] = 'was very impressed with him, so she ';
+WinSegments[14] = 'agreed to marry him. Sedna got into ';
+WinSegments[15] = 'her husband\'s kayak and travelled with him to her new home.  When ';
+WinSegments[16] = 'they arrived at his island, she saw that her home ';
+WinSegments[17] = 'was nothing but some sticks and bits of moss and feathers ';
+WinSegments[18] = 'clinging to a large rock.  Her husband took off ';
+WinSegments[19] = 'his hood, and she realized that he was not a man, but an evil ';
+WinSegments[20] = 'raven. He never hunted, he only caught fish. Sedna ';
+WinSegments[21] = 'was cold, lonely, hungry, and very unhappy. Every day ';
+WinSegments[22] = 'she cried for her father to ';
+WinSegments[23] = 'come and save her. Her father heard ';
+WinSegments[24] = 'her cries and decided to rescue her. He paddled his kayak to ';
+WinSegments[25] = 'the island where she was living. On their way ';
+WinSegments[26] = 'home, Sedna looked back and saw that the raven ';
+WinSegments[27] = 'was following them. He was gaining ';
+WinSegments[28] = 'on them quickly. As the raven ';
+WinSegments[29] = 'came close, her father took his paddle and struck the bird, who had ';
+WinSegments[30] = 'to fall back. Then the raven flapped ';
+WinSegments[31] = 'his powerful wings at the ocean and caused a huge storm to ';
+WinSegments[32] = 'blow up. When her father saw that their lives ';
+WinSegments[33] = 'were in danger, he became afraid for his own life. He ';
+WinSegments[34] = 'threw Sedna over the side of the kayak. Sedna tried ';
+WinSegments[35] = 'to save herself. She grabbed onto ';
+WinSegments[36] = 'the kayak with her fingers, but her father took his ';
+WinSegments[37] = 'paddle and beat at her fingers until they broke ';
+WinSegments[38] = 'off. As they sank into the ocean, her fingers ';
+WinSegments[39] = 'turned into seals and fish. Again, Sedna ';
+WinSegments[40] = 'grabbed the kayak with her hands, but ';
+WinSegments[41] = 'her father took his paddle and beat ';
+WinSegments[42] = 'her hands until they also fell into the water. As they ';
+WinSegments[43] = 'sank into the ocean, her hands turned into ';
+WinSegments[44] = 'whales and walrus. Sedna also sank into the ';
+WinSegments[45] = 'ocean. Sedna lives at the bottom ';
+WinSegments[46] = 'of the ocean. She is the goddess of ';
+WinSegments[47] = 'the sea. She is the one ';
+WinSegments[48] = 'who provides animals for the hunters, but only when ';
+WinSegments[49] = 'she feels generous. When she is angry, and this ';
+WinSegments[50] = 'is often, the hunters can\'t find ';
+WinSegments[51] = 'food; and the people go hungry. ';
+
+MacSegments = new Array();
+
+MacSegments[1] = 'Sedna was a beautiful Inuit girl who ';
+MacSegments[2] = 'didn\'t want to get married. Many hunters ';
+MacSegments[3] = 'wanted to marry her, but she refused ';
+MacSegments[4] = 'their offers. Her father scolded her, saying, "I am ';
+MacSegments[5] = 'getting older, and soon you will need a good husband who can provide ';
+MacSegments[6] = 'you with food and furs. You must marry the next hunter who ';
+MacSegments[7] = 'asks for you." Sedna still wasn\'t interested. Soon a young ';
+MacSegments[8] = 'hunter from a distant place came to her father\'s camp .  He ';
+MacSegments[9] = 'was dressed in warm furs, and spoke in a soft voice. He ';
+MacSegments[10] = 'promised to provide a good home and ';
+MacSegments[11] = 'plenty of animals for food and clothing. Although ';
+MacSegments[12] = 'he kept his face hidden under his hood, Sedna ';
+MacSegments[13] = 'was very impressed with him, so she ';
+MacSegments[14] = 'agreed to marry him. Sedna got into ';
+MacSegments[15] = 'her husband\'s kayak and travelled with him to her new home.  When ';
+MacSegments[16] = 'they arrived at his island, she saw that her home ';
+MacSegments[17] = 'was nothing but some sticks and bits of moss and feathers ';
+MacSegments[18] = 'clinging to a large rock.  Her husband took off ';
+MacSegments[19] = 'his hood, and she realized that he was not a man, but an evil ';
+MacSegments[20] = 'raven. He never hunted, he only caught fish. Sedna ';
+MacSegments[21] = 'was cold, lonely, hungry, and very unhappy. Every day ';
+MacSegments[22] = 'she cried for her father to ';
+MacSegments[23] = 'come and save her. Her father heard ';
+MacSegments[24] = 'her cries and decided to rescue her. He paddled his kayak to ';
+MacSegments[25] = 'the island where she was living. On their way ';
+MacSegments[26] = 'home, Sedna looked back and saw that the raven ';
+MacSegments[27] = 'was following them. He was gaining ';
+MacSegments[28] = 'on them quickly. As the raven ';
+MacSegments[29] = 'came close, her father took his paddle and struck the bird, who had ';
+MacSegments[30] = 'to fall back. Then the raven flapped ';
+MacSegments[31] = 'his powerful wings at the ocean and caused a huge storm to ';
+MacSegments[32] = 'blow up. When her father saw that their lives ';
+MacSegments[33] = 'were in danger, he became afraid for his own life. He ';
+MacSegments[34] = 'threw Sedna over the side of the kayak. Sedna tried ';
+MacSegments[35] = 'to save herself. She grabbed onto ';
+MacSegments[36] = 'the kayak with her fingers, but her father took his ';
+MacSegments[37] = 'paddle and beat at her fingers until they broke ';
+MacSegments[38] = 'off. As they sank into the ocean, her fingers ';
+MacSegments[39] = 'turned into seals and fish. Again, Sedna ';
+MacSegments[40] = 'grabbed the kayak with her hands, but ';
+MacSegments[41] = 'her father took his paddle and beat ';
+MacSegments[42] = 'her hands until they also fell into the water. As they ';
+MacSegments[43] = 'sank into the ocean, her hands turned into ';
+MacSegments[44] = 'whales and walrus. Sedna also sank into the ';
+MacSegments[45] = 'ocean. Sedna lives at the bottom ';
+MacSegments[46] = 'of the ocean. She is the goddess of ';
+MacSegments[47] = 'the sea. She is the one ';
+MacSegments[48] = 'who provides animals for the hunters, but only when ';
+MacSegments[49] = 'she feels generous. When she is angry, and this ';
+MacSegments[50] = 'is often, the hunters can\'t find ';
+MacSegments[51] = 'food; and the people go hungry. ';
+
+var platform = 'win';
+
+function Initialize(){
+
+	if (navigator.appVersion.indexOf('Mac') != -1) {
+		platform = 'mac';
+	}
+
+	if (platform == 'win'){
+		for (i = 1; i < WinSegments.length; i++){
+			Segments[i] = unescape(WinSegments[i]);
+		}
+	}
+	else {
+		for (i = 1; i < MacSegments.length; i++){
+			Segments[i] = unescape(MacSegments[i]);
+		}
+	}
+
+	TotalSegments = Segments.length - 1;
+
+	CurrentNumber = 1;
+	ShowQuestion();
+	Points = 0;
+	ThisQScore = 2;
+	document.StoryForm.Story.value = '';
+	StorySoFar = '';
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+}
+
+function ShowQuestion(){
+
+//Deal with the new paragraph thing
+
+	if (Segments[CurrentNumber] == '[NewPara]'){
+		StorySoFar += unescape('%0D%0A%0D%0A');
+		Segments[CurrentNumber] = unescape('%0D%0A%0D%0A');
+		Points += 2;
+		CurrentNumber++;
+	}
+
+//Deal with the last two segment situation
+	if (CurrentNumber == TotalSegments - 1){
+
+		var Temp = 1 + Math.floor(2 * Math.random());
+		document.QuizForm.Guess1.value = Segments[TotalSegments];
+		document.QuizForm.Guess2.value = Segments[TotalSegments];
+		document.QuizForm.Guess3.value = '';
+
+		document.QuizForm.elements[(Temp*Temp)].value = Segments[CurrentNumber];
+		CurrentCorrect = Temp;
+		CurrentAnswer = Segments[CurrentNumber];
+		ThisQScore = 1;
+		return;
+	}
+	
+
+	var FirstDistractor = 0;
+	var SecondDistractor = 0;
+	var Range = TotalSegments - CurrentNumber;
+
+
+	FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	while (Segments[FirstDistractor] == '[NewPara]'){
+		FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	SecondDistractor = FirstDistractor;
+	while ((SecondDistractor == FirstDistractor)||(Segments[SecondDistractor] == '[NewPara]')){
+		SecondDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	ThreeSegments = new Array(3);
+	ThreeSegments[1] = Segments[CurrentNumber];
+	ThreeSegments[2] = Segments[FirstDistractor];
+	ThreeSegments[3] = Segments[SecondDistractor];
+
+	CurrentAnswer = Segments[CurrentNumber];
+
+	MixedSegments = new Array(3);
+
+	var j = 3;
+	var i = 1;
+	var Temp = 0;
+	for (i = 1; i < 4; i++)  {
+
+		Temp = 1 + Math.floor(j  *  Math.random());
+		MixedSegments[i] = ThreeSegments[Temp];
+
+		for (k=Temp; k < j; k++) {
+			ThreeSegments[k] = ThreeSegments[k+1];
+		}
+		j = j - 1;
+	}
+
+	for (i=1; i<4; i++){
+		if (MixedSegments[i] == CurrentAnswer){
+			CurrentCorrect = i;
+		}
+	}
+
+	document.QuizForm.Guess1.value = MixedSegments[1];
+	document.QuizForm.Guess2.value = MixedSegments[2];
+	document.QuizForm.Guess3.value = MixedSegments[3];
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+
+	ThisQScore = 2;
+
+}
+
+function CheckAnswer(Chosen){
+
+	if (CurrentNumber == TotalSegments){
+		return;
+	}
+
+	if (CurrentCorrect == Chosen){
+		StorySoFar += CurrentAnswer;
+
+		if (CurrentNumber == 1){
+			LastThree = Segments[1];
+		}
+
+		if (CurrentNumber == 2){
+			LastThree = Segments[1] + Segments[2];
+		}
+
+		if (CurrentNumber > 2){
+				LastThree = Segments[CurrentNumber - 2] + Segments[CurrentNumber - 1] + Segments[CurrentNumber];
+		}
+
+
+		if (CurrentNumber == TotalSegments - 1){
+			StorySoFar += Segments[TotalSegments];
+			LastThree += Segments[TotalSegments];
+		}
+
+		if (SwitchFlag == 'WholeText'){
+			document.StoryForm.Story.value = StorySoFar;
+		}
+		else{
+			document.StoryForm.Story.value = LastThree;
+		}
+	
+		CurrentNumber++;
+		Points += ThisQScore;
+		
+		if (CurrentNumber < TotalSegments){
+			var CurrentScore = Math.floor(100*Points/(2*(CurrentNumber-1)));
+			document.QuizForm.ScoreBox.value = CurrentScore + '%';
+			ShowQuestion();
+		}
+		else{
+			document.QuizForm.Guess1.value = 'WELL DONE!';
+			document.QuizForm.Guess2.value = 'YOU HAVE COMPLETED';
+			document.QuizForm.Guess3.value = 'THE STORY!';
+			var FinalScore = Math.floor(100*Points/((2*TotalSegments) - 3));
+			document.QuizForm.ScoreBox.value = FinalScore + '%';
+		}	
+	}
+	else{
+		document.QuizForm.elements[(Chosen*3)-1].value = WrongChar;
+		document.QuizForm.ScoreBox.value = '';
+		if (ThisQScore > 0){
+			ThisQScore--;
+		}
+	}
+}
+
+function SwitchStuff(WhichButton){
+	SwitchFlag = WhichButton;
+	if (SwitchFlag == 'WholeText'){
+		document.StoryForm.Story.value = StorySoFar;
+	}
+	else{
+		document.StoryForm.Story.value = LastThree;
+	}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../css/sz-simple.css" />
+<link rel="stylesheet" type="text/css" href="../../css/sz-print.css" media="print" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28427007-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body onLoad="Initialize()">
+<div id="container">
+  <div id="header"><a name="top"></a>
+    <div id="uvic-elc"><a href="https://www.uvic.ca/"><img src="../../images/logo-uvic.gif" border="0" /></a><a href="../../index.html"><img src="../../images/logo-elc.gif" border="0" /></a></div>
+    <div id="sitetitle"><a href="../../index.html">Study Zone</a><br /></div>
+    <div id="searchbox">
+    <form action="https://web2.uvcs.uvic.ca/courses/elc/studyzone/results.htm" id="searchbox_013621260945567203807:sjxzc9x3aqa">
+      <input type="hidden" name="cx" value="013621260945567203807:sjxzc9x3aqa" />
+      <input type="hidden" name="cof" value="FORID:9" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="button" name="help" value="Help" id="helpbtn" class="searchbutton" onclick="location.href='../../help/index.html'" />
+        <input type="text" name="q" size="25" class="searchinput" />
+      <input type="submit" name="sa" value="Search" class="searchbutton" />
+          </form>
+  </div>
+  </div>
+  <div id="breadcrumb">
+    <ul>
+      <li class="homebutton"><a href="../../index.html">Home</a></li>
+      <li>&#187;&nbsp;<a href="../index.html">Level 330 &#8212; Lower Intermediate</a></li>
+      <li>&#187;&nbsp;<a href="index.html">Reading Topics</a></li>
+      <li>&#187;&nbsp;Sedna the Sea Goddess: Exercise 2</li>
+    </ul>
+  </div>
+  <div id="content">
+    <h2 align="center">Sedna the Sea Goddess: Recreating the Story</h2>
+    <p>Build the story by choosing one of the three sentences. Use the <strong>A</strong>, <strong>B</strong>, or <strong>C</strong> buttons. If your choice is correct, the sentence will be added to the story.</p>
+    <form name="QuizForm" id="QuizForm" onsubmit="return false">
+      <table border="0">
+        <tr>
+          <td><input type="button" name="Check1" value="   A   " onclick="CheckAnswer(1)" /></td>
+          <td><input type="EDIT" name="Guess1" size="75" maxlength="80" onfocus="CheckAnswer(1); blur()" /></td>
+          <td><input type="EDIT" name="Result1" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check2" value="   B   " onclick="CheckAnswer(2)" /></td>
+          <td><input type="EDIT" name="Guess2" size="75" maxlength="80" onfocus="CheckAnswer(2); blur()" /></td>
+          <td><input type="EDIT" name="Result2" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check3" value="   C   " onclick="CheckAnswer(3)" /></td>
+          <td><input type="EDIT" name="Guess3" size="75" maxlength="80" onfocus="CheckAnswer(3); blur()" /></td>
+          <td><input type="EDIT" name="Result3" size="3" maxlength="3" /></td>
+        </tr>
+      </table>
+      <p>Score
+        <input type="text" name="ScoreBox" size="5" maxlength="5" />
+      </p>
+    </form>
+    <form name="StoryForm" id="StoryForm">
+      <textarea style="width:80%" name="Story" rows="18" cols="100" wrap="virtual"></textarea>
+      <p>
+        <input type="button" name="ReStart" value="Restart" onclick="Initialize()" />
+      </p>
+    </form>
+    <div id="exerciselink"><a href="sedna-the-sea-goddess3.html"><strong>Next exercise</strong></a></div>
+  </div>
+  <div id="footer">    <div class="topbutton"><a href="#top">Top of page</a></div>
+    <div class="sharebutton"> 
+      <!-- Share BEGIN --> 
+      <a class="a2a_dd" href="https://www.addtoany.com/share_save">Share this page ...</a> 
+      <script type="text/javascript" src="../../../../../../static.addtoany.com/menu/page.js"></script> 
+      <!-- Share END --> 
+    </div>
+<div id="footercontact"><strong>Comments?</strong> Visit the <a href="https://blog.uvcs.uvic.ca/elc-studyzone/feedback/" target="_blank"><strong>Feedback Page</strong></a> on our blog!<br />
+  Created by the <a href="https://www.uvic.ca/elc/" target="_blank"><strong>University of Victoria English Language Centre</strong></a><br />
+      <strong><a href="../../terms/index.html">Terms of Use</a></strong>&nbsp;&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_GB" target="_blank" rel="license"><img alt="Creative Commons Licence" class="cc" src="../../../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png" /></a>&nbsp;&nbsp;Published 2013</div>
+  </div>
+</div>
+</body>
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/sedna-the-sea-goddess2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:54 GMT -->
+</html>

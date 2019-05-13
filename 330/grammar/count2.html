@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml"
+             xml:lang="en">
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/grammar/count2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:25:58 GMT -->
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+<title>ELC Study Zone: Count and Non-Count Nouns 2</title>
+<link rel="stylesheet" type="text/css" href="../../css/sz-simple.css" />
+<link rel="stylesheet" type="text/css" href="../../css/sz-print.css" media="print" />
+<style type="text/css">
+
+/* Hack to hide a nested Quicktime player from IE, which can't handle it. */
+* html object.MediaPlayerNotForIE {
+	display: none;
+}
+body{
+	font-family: 'Lucida Sans Unicode', Verdana, Geneva, Arial, Helvetica, sans-serif;
+	background-color: #ffffff;
+}
+p {
+}
+table,div,span,td{
+	font-size: 100%;
+}
+div.Titles{
+	text-align: center; 
+	color: #000000;
+}
+button{
+	font-family: 'Lucida Sans Unicode', 'Lucida Sans Unicode',Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	display: inline;
+}
+.ExerciseTitle{
+	font-size: 140%;
+	color: #000000;
+}
+.ExerciseSubtitle{
+	font-size: 120%;
+	color: #000000;
+}
+div.StdDiv{
+	background-color: #ffffff;
+	text-align: center;
+	font-size: 100%;
+	color: #000000;
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: #000000;
+	margin-bottom: 1px;
+}
+.RTLText{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", 'Lucida Sans Unicode', 'Lucida Sans Unicode',Verdana, Arial, Helvetica, sans-serif; 
+}
+
+.CentredRTLText{
+	text-align: center;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", 'Lucida Sans Unicode', 'Lucida Sans Unicode',Verdana, Arial, Helvetica, sans-serif; 
+}
+button p.RTLText{
+	text-align: center;
+}
+.RTLGapBox{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Times New Roman", 'Lucida Sans Unicode', 'Lucida Sans Unicode',Verdana, Arial, Helvetica, sans-serif;
+}
+.Guess{
+	font-weight: bold;
+}
+.CorrectAnswer{
+	font-weight: bold;
+}
+div#Timer{
+	padding: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: #000000;
+}
+span#TimerText{
+	padding: 0.25em;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+	color: #000000;
+}
+span.Instructions{
+}
+div.ExerciseText{
+}
+.FeedbackText, .FeedbackText span.CorrectAnswer, .FeedbackText span.Guess, .FeedbackText span.Answer{
+	color: #000000;
+}
+.LeftItem{
+	font-size: 100%;
+	color: #000000;
+	text-align: left;
+}
+.RightItem{
+	font-weight: bold;
+	font-size: 100%;
+	color: #000000;
+}
+span.CorrectMark{
+}
+input, textarea{
+	font-family: 'Lucida Sans Unicode', 'Lucida Sans Unicode',Verdana, Arial, Helvetica, sans-serif;
+	/* font-size: 120%; */
+}
+
+select{
+	font-size: 100%;
+}
+div.Feedback {
+	background-color: #ffffff;
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: 100%;
+}
+div.ExerciseDiv{
+	color: #000000;
+}
+
+/* Keypad styles */
+
+div.Keypad{
+	text-align: center;
+	display: none; /* initially hidden, shown if needed */
+	margin-bottom: 0.5em;
+}
+
+div.Keypad button{
+	font-family: 'Lucida Sans Unicode', 'Lucida Sans Unicode',Verdana, Arial, Helvetica, sans-serif;
+	font-size: 120%;
+	background-color: #ffffff;
+	color: #000000;
+	width: 2em;
+}
+
+/* JQuiz styles */
+
+div.QuestionNavigation{
+	text-align: center;
+}
+
+.QNum{
+	margin: 0em 1em 0.5em 1em;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+textarea{
+	font-family: 'Lucida Sans Unicode', 'Lucida Sans Unicode',Verdana, Arial, Helvetica, sans-serif;
+}
+
+.QuestionText{
+	text-align: left;
+	margin: 0px;
+	font-size: 100%;
+}
+
+.Answer {
+	font-size: 120%;
+	letter-spacing: 0.1em;
+}
+
+.PartialAnswer{
+	font-size: 120%;
+	letter-spacing: 0.1em;
+	color: #000000;
+}
+
+.Highlight{
+	color: #000000;
+	background-color: #ffff00;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+ol.QuizQuestions{
+	text-align: left;
+	clear:both;
+}
+
+li.QuizQuestion{
+	padding: 1em;
+/*	border-style: solid;
+	border-width: 0px 0px 1px 0px; */
+	clear:both
+}
+ol.MCAnswers{
+	text-align: left;
+	list-style-type: upper-alpha;
+	padding: 1em;
+}
+
+ol.MCAnswers li{
+	margin-bottom: 1em;
+}
+
+ol.MSelAnswers{
+	text-align: left;
+	list-style-type: lower-alpha;
+	padding: 1em;
+}
+
+div.ShortAnswer{
+	padding: 1em 1em 1em 0.1em;
+	overflow:hidden;
+}
+
+.FuncButton {
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #ccc;
+	border-top-color: #ccc;
+	border-right-color: #7f7f7f;
+	border-bottom-color: #7f7f7f;
+	color: #000000;
+	background-color: #FFFFFF;
+
+	border-width: 1px;
+padding: 3px 6px 3px 6px;
+	cursor: pointer;
+}
+
+.FuncButtonUp {
+	color: #FFFFFF;
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #ffffff;
+	border-top-color: #ffffff;
+	border-right-color: #7f7f7f;
+	border-bottom-color: #7f7f7f;
+
+	background-color: #000000;
+	color: #FFFFFF;
+	border-width: 1px;
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+}
+
+.FuncButtonDown {
+	color: #FFFFFF;
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #7f7f7f;
+	border-top-color: #7f7f7f;
+	border-right-color: #ffffff;
+	border-bottom-color: #ffffff;
+	background-color: #000000;
+	color: #FFFFFF;
+
+	border-width: 1px;
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+}
+/*BeginNavBarStyle*/
+
+a{
+	color: #003399;
+}
+a:visited{
+	color: #003399;
+}
+a:hover{
+	color: #003399;
+}
+div.CardStyle {
+	position: absolute;
+	font-family: 'Lucida Sans Unicode', 'Lucida Sans Unicode',Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	padding: 5px;
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #ffffff;
+	left: -50px;
+	top: -50px;
+	overflow: visible;
+}
+.rtl{
+	text-align: right;
+	font-size: 140%;
+}
+
+</style>
+<script type="text/javascript">
+
+var CurrentAnswer = '';
+var JumlahSalah = 0;
+var JumlahBenar = 0;
+var Benar = 'Correct!';
+var Salah = 'Incorrect!';
+var BelumCoba = 'You haven\'t tried this yet.';
+var SudahCoba = 'You\'ve tried this already';
+
+Jawaban = new Array();
+
+Jawaban[0] = 'I\'d like some water. ';
+Jawaban[1] = 'I\'d like some fish. ';
+Jawaban[2] = 'I\'d like a hamburger. ';
+Jawaban[3] = 'I\'d like a hot dog. ';
+Jawaban[4] = 'I\'d like a fish. ';
+Jawaban[5] = 'John wants some water. ';
+Jawaban[6] = 'John wants some fish. ';
+Jawaban[7] = 'John wants a hamburger. ';
+Jawaban[8] = 'John wants a fish. ';
+Jawaban[9] = 'John wants a hot dog. ';
+
+
+//zero-based array of all correct answers
+
+var SudahSalah = 'xxx';
+
+SudahDipakai = new Array();
+
+function ShowStuff(){
+
+	document.QuizForm.Hasil.value = '';
+	CurrentAnswer = '';
+	Sudah = 0;
+	Lengkap = 0;
+	var i = 0;
+
+	for (i=0; i<document.QuizForm.Pertama.length; i++){
+		if (document.QuizForm.Pertama[i].checked){
+			CurrentAnswer += document.QuizForm.Pertama[i].value;
+			Lengkap++;
+		}
+	}
+
+
+	for (i=0; i<document.QuizForm.Kedua.length; i++){
+		if (document.QuizForm.Kedua[i].checked){
+			CurrentAnswer += document.QuizForm.Kedua[i].value;
+			Lengkap++;
+		}
+	}
+
+
+	for (i=0; i<document.QuizForm.Ketiga.length; i++){
+		if (document.QuizForm.Ketiga[i].checked){
+			CurrentAnswer += document.QuizForm.Ketiga[i].value;
+			Lengkap++;
+		}
+	}
+
+
+	for (i=0; i<document.QuizForm.Keempat.length; i++){
+		if (document.QuizForm.Keempat[i].checked){
+			CurrentAnswer += document.QuizForm.Keempat[i].value;
+			Lengkap++;
+		}
+	}
+
+
+	document.QuizForm.Kalimat.value = CurrentAnswer;
+	if (Lengkap < 4){
+		return;
+	}
+
+	for (i=0; i<Jawaban.length; i++){
+		if (CurrentAnswer == Jawaban[i]){
+			if (CurrentAnswer == SudahDipakai[i]){
+				Sudah = 1;		
+			}
+		}
+	}
+	if (Sudah == 0){
+		if (SudahSalah.indexOf(CurrentAnswer) != -1){
+			Sudah = 2;
+		}
+	}
+
+	if (Sudah == 0){
+		document.QuizForm.Kalimat.value += ' (' + BelumCoba + ')';
+	}
+	if (Sudah == 1){
+		document.QuizForm.Kalimat.value += ' (' + SudahCoba + '. ' + Benar + ')';
+	}
+	if (Sudah == 2){
+		document.QuizForm.Kalimat.value += ' (' + SudahCoba + '. ' + Salah + ')';
+	}
+}
+
+function CheckAnswer(){
+
+	ShowStuff();
+	var Betul = false;
+	var Balasan = '';
+	var Skor = 0;
+	for (i=0; i<Jawaban.length; i++){
+		if (CurrentAnswer == Jawaban[i]){
+			if (CurrentAnswer != SudahDipakai[i]){
+				JumlahBenar++;
+				SudahDipakai[i] = Jawaban[i];
+			}
+			Betul = true;
+			Balasan = Benar;
+		}
+	}
+	if (Betul == false){
+		if (SudahSalah.indexOf(CurrentAnswer) < 0){
+			JumlahSalah++;
+			Balasan = 'Incorrect!';
+			SudahSalah += CurrentAnswer;
+		}
+	}
+	document.QuizForm.Hasil.value = Balasan;
+	document.QuizForm.Benar.value = JumlahBenar;
+	document.QuizForm.Salah.value = JumlahSalah;
+	Skor = Math.floor(100*(JumlahBenar/(JumlahBenar + JumlahSalah))) + '%';
+	document.QuizForm.Skornya.value = Skor;
+
+/* BC: Resets check radio buttons */
+	for (i=0; i<document.QuizForm.Pertama.length; i++) {
+		document.QuizForm.Pertama[i].checked = false;
+	}
+	for (i=0; i<document.QuizForm.Kedua.length; i++) {
+		document.QuizForm.Kedua[i].checked = false;
+	}
+	for (i=0; i<document.QuizForm.Ketiga.length; i++) {
+		document.QuizForm.Ketiga[i].checked = false;
+	}
+	for (i=0; i<document.QuizForm.Keempat.length; i++) {
+		document.QuizForm.Keempat[i].checked = false;
+	}
+	document.QuizForm.Kalimat.value = '';
+/* BC: message if all 10 sentence found */
+	if (JumlahBenar == '10') {
+		document.QuizForm.Kalimat.value = 'Congratulations! You found all the sentences. Your score is '+Skor+'.';
+	}
+}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28427007-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body id="TheBody" >
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28427007-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- BeginHeaderBreadcrumb-BC -->
+<div id="container">
+  <div id="header"><a name="top" id="top"></a>
+    <div id="uvic-elc"><a href="https://www.uvic.ca/"><img src="../../images/logo-uvic.gif" border="0" /></a><a href="../../index.html"><img src="../../images/logo-elc.gif" border="0" /></a></div>
+    <div id="sitetitle"><a href="../../index.html">Study Zone</a><br /></div>
+    <div id="searchbox">
+    <form action="https://web2.uvcs.uvic.ca/courses/elc/studyzone/results.htm" id="searchbox_013621260945567203807:sjxzc9x3aqa">
+      <input type="hidden" name="cx" value="013621260945567203807:sjxzc9x3aqa" />
+      <input type="hidden" name="cof" value="FORID:9" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="button" name="help" value="Help" id="helpbtn" class="searchbutton" onclick="location.href='../../help/index.html'" />
+        <input type="text" name="q" size="25" class="searchinput" />
+      <input type="submit" name="sa" value="Search" class="searchbutton" />
+          </form>
+  </div>
+  </div>
+  <div id="breadcrumb">
+    <ul>
+      <li class="homebutton"><a href="../../index.html">Home</a></li>
+      <li>&#187;&nbsp;<a href="../index.html">Level 330 &#8212; Lower Intermediate</a></li>
+      <li>&#187;&nbsp;<a href="index.html">Grammar Topics</a></li>
+      <li>&#187;&nbsp;<a href="count.html">Count and Non-Count Nouns</a>&nbsp;&#187;&nbsp;Exercise</li>
+    </ul>
+  </div>
+  <div id="content">
+    <!-- EndHeaderBreadcrumb-BC -->
+    <div class="Titles">
+      <h2 class="ExerciseTitle">Count and Non-Count Nouns 2</h2>
+      <h3 class="ExerciseSubtitle">Create sentences by selecting parts which fit together. When you think you have a correct sentence, press &#8220;Check&#8221;. There are 10 correct sentences to find.</h3>
+    </div>
+    <div id="InstructionsDiv" class="StdDiv">
+      <div id="Instructions">In each column, click on the button beside the best word to make a sentence.</div>
+    </div>
+    <div id="MainDiv" class="StdDiv">
+      <form name="QuizForm" onsubmit="CheckAnswer(); return false">
+        <center>
+          <table border="1" cellspacing="10">
+            <tr>
+              <td><div align="left">
+                  <input name="Pertama" type="radio" onclick="ShowStuff()" value="I'd " />
+                  I'd<br />
+                  <input name="Pertama" type="radio" onclick="ShowStuff()" value="John " />
+                  John<br />
+                </div></td>
+              <td><div align="left">
+                  <input name="Kedua" type="radio" onclick="ShowStuff()" value="wants " />
+                  wants<br />
+                  <input name="Kedua" type="radio" onclick="ShowStuff()" value="like " />
+                  like<br />
+                </div></td>
+              <td><div align="left">
+                  <input name="Ketiga" type="radio" onclick="ShowStuff()" value="some " />
+                  some<br />
+                  <input name="Ketiga" type="radio" onclick="ShowStuff()" value="a " />
+                  a<br />
+                </div></td>
+              <td><div align="left">
+                  <input name="Keempat" type="radio" onclick="ShowStuff()" value="water. " />
+                  water.<br />
+                  <input name="Keempat" type="radio" onclick="ShowStuff()" value="hamburger. " />
+                  hamburger.<br />
+                  <input name="Keempat" type="radio" onclick="ShowStuff()" value="fish. " />
+                  fish.<br />
+                  <input name="Keempat" type="radio" onclick="ShowStuff()" value="hot dog. " />
+                  hot dog.<br />
+                </div></td>
+            </tr>
+            <tr>
+              <td colspan="4"><center>
+                  <textarea name="Kalimat" cols="60" rows="2"></textarea>
+                </center></td>
+            </tr>
+            <tr>
+              <td colspan="4"><center>
+                  <input type="button" value="Check" onclick="CheckAnswer()" />
+                  Result:
+                  <input type="edit" name="Hasil" size="10" maxlength="10" />
+                </center></td>
+            </tr>
+            <tr>
+              <td colspan="4"><center>
+                  Total correct:
+                  <input type="edit" name="Benar" size="5" maxlength="3" />
+                  Total incorrect:
+                  <input type="edit" name="Salah" size="5" maxlength="3" />
+                  Score:
+                  <input type="edit" name="Skornya" size="5" maxlength="4" />
+                </center></td>
+            </tr>
+</tbody>
+      </table>
+        </center>
+      </form>
+    </div>
+    <div class="Feedback" id="FeedbackDiv">
+      <div class="FeedbackText" id="FeedbackContent"></div>
+      <button id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+    </div>
+    <!-- BeginBottomNavButtons -->
+    <div class="NavButtonBar" id="BottomNavBar">
+      <button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)" onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOut(this)" onclick="location='index-2.html'; return false;">Return to the topics</button>
+    </div>
+    <!-- EndBottomNavButtons -->
+    <!-- BeginSubmissionForm -->
+    <!-- EndSubmissionForm -->
+    <!-- BeginFooter-BC -->
+  </div>
+  <div id="footer">    <div class="topbutton"><a href="#top">Top of page</a></div>
+    <div class="sharebutton"> 
+      <!-- Share BEGIN --> 
+      <a class="a2a_dd" href="https://www.addtoany.com/share_save">Share this page ...</a> 
+      <script type="text/javascript" src="../../../../../../static.addtoany.com/menu/page.js"></script> 
+      <!-- Share END --> 
+    </div>
+<div id="footercontact"><strong>Comments?</strong> Visit the <a href="https://blog.uvcs.uvic.ca/elc-studyzone/feedback/" target="_blank"><strong>Feedback Page</strong></a> on our blog!<br />
+  Created by the <a href="https://www.uvic.ca/elc/" target="_blank"><strong>University of Victoria English Language Centre</strong></a><br />
+      <strong><a href="../../terms/index.html">Terms of Use</a></strong>&nbsp;&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_GB" target="_blank" rel="license"><img alt="Creative Commons Licence" class="cc" src="../../../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png" /></a>&nbsp;&nbsp;Published 1998, Revised 2008</div>
+  </div>
+</div>
+<!-- EndFooter-BC -->
+</body>
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/grammar/count2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:25:58 GMT -->
+</html>

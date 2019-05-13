@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/the-monkey-and-the-crocodile2b.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:51 GMT -->
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+<title>ELC Study Zone: The Monkey and the Crocodile - Exercise 2</title>
+<script language="JavaScript" type="text/javascript">
+
+var RightChar = ':-)';
+var WrongChar = 'X';
+var YourScoreIs = 'Your score is:';
+var DefaultPrompt = 'Which is the next part of the story?';
+var StorySoFar = '';
+
+var CurrentAnswer = '';
+var GuessesSoFar = 0;
+var CurrentNumber = 0;
+var CurrentCorrect = 0;
+var Points = 0;
+var TotalSegments = 0;
+var LastThree = '';
+var SwitchFlag = 'WholeText';
+
+var IndexButton = '<form method=post><INPUT TYPE=\"Button\" NAME=\"Index\" VALUE=\"Go back to contents\" onClick="parent.location=\'index.htm\'"></FORM>';
+//'<BR><FORM><INPUT TYPE=\"Button\" VALUE=\"[Index]\" onClick=\"parent.location=\'index.htm\'\"></FORM>';
+
+Segments = new Array();
+
+WinSegments = new Array();
+
+WinSegments [1] = '\"Oh Monkey,\" the crocodile called, \"It\'s a lovely ';
+WinSegments [2] = 'night, and I feel like going for a ride on ';
+WinSegments [3] = 'the river. Why don\'t you come along? I could ';
+WinSegments [4] = 'show you the beauty of the river.\" \"I don\'t ';
+WinSegments [5] = 'think so,\" said the monkey. \"I don\'t think that\'s a good ';
+WinSegments [6] = 'idea. And anyway, I can\'t swim, and I\'m afraid of ';
+WinSegments [7] = 'the water.\" The crocodile said, \"I am the king of the river. You ';
+WinSegments [8] = 'don\'t need to be afraid when you ride on ';
+WinSegments [9] = 'my back. Besides, we\'ve been friends for a long ';
+WinSegments [10] = 'time. What a shame it would be if you can\'t ';
+WinSegments [11] = 'trust me by now.\" The monkey thought ';
+WinSegments [12] = 'for a minute. Perhaps the crocodile was right. Who ';
+WinSegments [13] = 'can you trust, if not your friends? \"OK,\" he ';
+WinSegments [14] = 'said, \"I\'ll come with you.\" He jumped ';
+WinSegments [15] = 'onto the crocodile\'s back, and they sailed into the river. It ';
+WinSegments [16] = 'was a wonderful ride, and the monkey was really happy, but ';
+WinSegments [17] = 'the crocodile was quiet, and deep in ';
+WinSegments [18] = 'thought. \"What\'s the matter?\" asked ';
+WinSegments [19] = 'the monkey. The crocodile almost burst into ';
+WinSegments [20] = 'tears. \"I\'m sorry, my friend. I lied to you. I am ';
+WinSegments [21] = 'not doing this to entertain you. Rather, ';
+WinSegments [22] = 'I am taking you to my wife. She wants ';
+WinSegments [23] = 'to eat your liver.\" \"Eat my liver!!\" The monkey ';
+WinSegments [24] = 'was astonished. \"Why does she want to ';
+WinSegments [25] = 'eat my liver?\" \"She knows that you eat ';
+WinSegments [26] = 'the fruit of the naval tree every day. She ';
+WinSegments [27] = 'thinks that your liver must be very sweet ';
+WinSegments [28] = 'and tender, so she wants to eat it.\" \"I see,\" said ';
+WinSegments [29] = 'the monkey. He saw that his life was in ';
+WinSegments [30] = 'danger. He thought for a minute. \"My ';
+WinSegments [31] = 'friend, don\'t feel bad on my account,\" he ';
+WinSegments [32] = 'said. \"I would be honored to give my liver ';
+WinSegments [33] = 'to your wife. But you should have told ';
+WinSegments [34] = 'me about this before we left the naval tree.\" \"Why?\" asked ';
+WinSegments [35] = 'the crocodile. \"Well, I always wash my liver in ';
+WinSegments [36] = 'the river and then hang it on a branch of the ';
+WinSegments [37] = 'tree.\" \"Oh?\" said the crocodile. \"If you take me back ';
+WinSegments [38] = 'to the tree,\" said Monkey, \"I\'ll get it for you. Then you can ';
+WinSegments [39] = 'take it to your wife.\" The crocodile swam ';
+WinSegments [40] = 'quickly back to the naval tree. When he got to the ';
+WinSegments [41] = 'shore, the monkey jumped off his back and climbed ';
+WinSegments [42] = 'up the tree.  \"Hah! Crocodile! Don\'t you know ';
+WinSegments [43] = 'that I can\'t give you my liver? This has been a good ';
+WinSegments [44] = 'lesson to me about trust.\" ';
+
+
+MacSegments = new Array();
+
+MacSegments [1] = '\"Oh Monkey,\" the crocodile called, \"It\'s a lovely ';
+MacSegments [2] = 'night, and I feel like going for a ride on ';
+MacSegments [3] = 'the river. Why don\'t you come along? I could ';
+MacSegments [4] = 'show you the beauty of the river.\" \"I don\'t ';
+MacSegments [5] = 'think so,\" said the monkey. \"I don\'t think that\'s a good ';
+MacSegments [6] = 'idea. And anyway, I can\'t swim, and I\'m afraid of ';
+MacSegments [7] = 'the water.\" The crocodile said, \"I am the king of the river. You ';
+MacSegments [8] = 'don\'t need to be afraid when you ride on ';
+MacSegments [9] = 'my back. Besides, we\'ve been friends for a long ';
+MacSegments [10] = 'time. What a shame it would be if you can\'t ';
+MacSegments [11] = 'trust me by now.\" The monkey thought ';
+MacSegments [12] = 'for a minute. Perhaps the crocodile was right. Who ';
+MacSegments [13] = 'can you trust, if not your friends? \"OK,\" he ';
+MacSegments [14] = 'said, \"I\'ll come with you.\" He jumped ';
+MacSegments [15] = 'onto the crocodile\'s back, and they sailed into the river. It ';
+MacSegments [16] = 'was a wonderful ride, and the monkey was really happy, but ';
+MacSegments [17] = 'the crocodile was quiet, and deep in ';
+MacSegments [18] = 'thought. \"What\'s the matter?\" asked ';
+MacSegments [19] = 'the monkey. The crocodile almost burst into ';
+MacSegments [20] = 'tears. \"I\'m sorry, my friend. I lied to you. I am ';
+MacSegments [21] = 'not doing this to entertain you. Rather, ';
+MacSegments [22] = 'I am taking you to my wife. She wants ';
+MacSegments [23] = 'to eat your liver.\" \"Eat my liver!!\" The monkey ';
+MacSegments [24] = 'was astonished. \"Why does she want to ';
+MacSegments [25] = 'eat my liver?\" \"She knows that you eat ';
+MacSegments [26] = 'the fruit of the naval tree every day. She ';
+MacSegments [27] = 'thinks that your liver must be very sweet ';
+MacSegments [28] = 'and tender, so she wants to eat it.\" \"I see,\" said ';
+MacSegments [29] = 'the monkey. He saw that his life was in ';
+MacSegments [30] = 'danger. He thought for a minute. \"My ';
+MacSegments [31] = 'friend, don\'t feel bad on my account,\" he ';
+MacSegments [32] = 'said. \"I would be honored to give my liver ';
+MacSegments [33] = 'to your wife. But you should have told ';
+MacSegments [34] = 'me about this before we left the naval tree.\" \"Why?\" asked ';
+MacSegments [35] = 'the crocodile. \"Well, I always wash my liver in ';
+MacSegments [36] = 'the river and then hang it on a branch of the ';
+MacSegments [37] = 'tree.\" \"Oh?\" said the crocodile. \"If you take me back ';
+MacSegments [38] = 'to the tree,\" said Monkey, \"I\'ll get it for you. Then you can ';
+MacSegments [39] = 'take it to your wife.\" The crocodile swam ';
+MacSegments [40] = 'quickly back to the naval tree. When he got to the ';
+MacSegments [41] = 'shore, the monkey jumped off his back and climbed ';
+MacSegments [42] = 'up the tree.  \"Hah! Crocodile! Don\'t you know ';
+MacSegments [43] = 'that I can\'t give you my liver? This has been a good ';
+MacSegments [44] = 'lesson to me about trust.\" ';
+
+
+var platform = 'win';
+
+function Initialize(){
+
+	if (navigator.appVersion.indexOf('Mac') != -1) {
+		platform = 'mac';
+	}
+
+	if (platform == 'win'){
+		for (i = 1; i < WinSegments.length; i++){
+			Segments[i] = unescape(WinSegments[i]);
+		}
+	}
+	else {
+		for (i = 1; i < MacSegments.length; i++){
+			Segments[i] = unescape(MacSegments[i]);
+		}
+	}
+
+	TotalSegments = Segments.length - 1;
+
+	CurrentNumber = 1;
+	ShowQuestion();
+	Points = 0;
+	ThisQScore = 2;
+	document.StoryForm.Story.value = '';
+	StorySoFar = '';
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+}
+
+function ShowQuestion(){
+
+//Deal with the new paragraph thing
+
+	if (Segments[CurrentNumber] == '[NewPara]'){
+		StorySoFar += unescape('%0D%0A%0D%0A');
+		Segments[CurrentNumber] = unescape('%0D%0A%0D%0A');
+		Points += 2;
+		CurrentNumber++;
+	}
+
+//Deal with the last two segment situation
+	if (CurrentNumber == TotalSegments - 1){
+
+		var Temp = 1 + Math.floor(2 * Math.random());
+		document.QuizForm.Guess1.value = Segments[TotalSegments];
+		document.QuizForm.Guess2.value = Segments[TotalSegments];
+		document.QuizForm.Guess3.value = '';
+
+		document.QuizForm.elements[(Temp*Temp)].value = Segments[CurrentNumber];
+		CurrentCorrect = Temp;
+		CurrentAnswer = Segments[CurrentNumber];
+		ThisQScore = 1;
+		return;
+	}
+	
+
+	var FirstDistractor = 0;
+	var SecondDistractor = 0;
+	var Range = TotalSegments - CurrentNumber;
+
+
+	FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	while (Segments[FirstDistractor] == '[NewPara]'){
+		FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	SecondDistractor = FirstDistractor;
+	while ((SecondDistractor == FirstDistractor)||(Segments[SecondDistractor] == '[NewPara]')){
+		SecondDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	ThreeSegments = new Array(3);
+	ThreeSegments[1] = Segments[CurrentNumber];
+	ThreeSegments[2] = Segments[FirstDistractor];
+	ThreeSegments[3] = Segments[SecondDistractor];
+
+	CurrentAnswer = Segments[CurrentNumber];
+
+	MixedSegments = new Array(3);
+
+	var j = 3;
+	var i = 1;
+	var Temp = 0;
+	for (i = 1; i < 4; i++)  {
+
+		Temp = 1 + Math.floor(j  *  Math.random());
+		MixedSegments[i] = ThreeSegments[Temp];
+
+		for (k=Temp; k < j; k++) {
+			ThreeSegments[k] = ThreeSegments[k+1];
+		}
+		j = j - 1;
+	}
+
+	for (i=1; i<4; i++){
+		if (MixedSegments[i] == CurrentAnswer){
+			CurrentCorrect = i;
+		}
+	}
+
+	document.QuizForm.Guess1.value = MixedSegments[1];
+	document.QuizForm.Guess2.value = MixedSegments[2];
+	document.QuizForm.Guess3.value = MixedSegments[3];
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+
+	ThisQScore = 2;
+
+}
+
+function CheckAnswer(Chosen){
+
+	if (CurrentNumber == TotalSegments){
+		return;
+	}
+
+	if (CurrentCorrect == Chosen){
+		StorySoFar += CurrentAnswer;
+
+		if (CurrentNumber == 1){
+			LastThree = Segments[1];
+		}
+
+		if (CurrentNumber == 2){
+			LastThree = Segments[1] + Segments[2];
+		}
+
+		if (CurrentNumber > 2){
+				LastThree = Segments[CurrentNumber - 2] + Segments[CurrentNumber - 1] + Segments[CurrentNumber];
+		}
+
+
+		if (CurrentNumber == TotalSegments - 1){
+			StorySoFar += Segments[TotalSegments];
+			LastThree += Segments[TotalSegments];
+		}
+
+		if (SwitchFlag == 'WholeText'){
+			document.StoryForm.Story.value = StorySoFar;
+		}
+		else{
+			document.StoryForm.Story.value = LastThree;
+		}
+	
+		CurrentNumber++;
+		Points += ThisQScore;
+		
+		if (CurrentNumber < TotalSegments){
+			var CurrentScore = Math.floor(100*Points/(2*(CurrentNumber-1)));
+			document.QuizForm.ScoreBox.value = CurrentScore + '%';
+			ShowQuestion();
+		}
+		else{
+			document.QuizForm.Guess1.value = 'WELL DONE!';
+			document.QuizForm.Guess2.value = 'YOU HAVE COMPLETED THE';
+			document.QuizForm.Guess3.value = 'LAST PART OF THE STORY!';
+			var FinalScore = Math.floor(100*Points/((2*TotalSegments) - 3));
+			document.QuizForm.ScoreBox.value = FinalScore + '%';
+		}	
+	}
+	else{
+		document.QuizForm.elements[(Chosen*3)-1].value = WrongChar;
+		document.QuizForm.ScoreBox.value = '';
+		if (ThisQScore > 0){
+			ThisQScore--;
+		}
+	}
+}
+
+function SwitchStuff(WhichButton){
+	SwitchFlag = WhichButton;
+	if (SwitchFlag == 'WholeText'){
+		document.StoryForm.Story.value = StorySoFar;
+	}
+	else{
+		document.StoryForm.Story.value = LastThree;
+	}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../css/sz-simple.css" />
+<link rel="stylesheet" type="text/css" href="../../css/sz-print.css" media="print" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28427007-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body onLoad="Initialize()">
+<div id="container">
+  <div id="header"><a name="top"></a>
+    <div id="uvic-elc"><a href="https://www.uvic.ca/"><img src="../../images/logo-uvic.gif" border="0" /></a><a href="../../index.html"><img src="../../images/logo-elc.gif" border="0" /></a></div>
+    <div id="sitetitle"><a href="../../index.html">Study Zone</a><br /></div>
+    <div id="searchbox">
+    <form action="https://web2.uvcs.uvic.ca/courses/elc/studyzone/results.htm" id="searchbox_013621260945567203807:sjxzc9x3aqa">
+      <input type="hidden" name="cx" value="013621260945567203807:sjxzc9x3aqa" />
+      <input type="hidden" name="cof" value="FORID:9" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="button" name="help" value="Help" id="helpbtn" class="searchbutton" onclick="location.href='../../help/index.html'" />
+        <input type="text" name="q" size="25" class="searchinput" />
+      <input type="submit" name="sa" value="Search" class="searchbutton" />
+          </form>
+  </div>
+  </div>
+  <div id="breadcrumb">
+    <ul>
+      <li class="homebutton"><a href="../../index.html">Home</a></li>
+      <li>&#187;&nbsp;<a href="../index.html">Level 330 &#8212; Lower Intermediate</a></li>
+      <li>&#187;&nbsp;<a href="index.html">Reading Topics</a></li>
+      <li>&#187;&nbsp;The Monkey and the Crocodile: Exercise 2B</li>
+    </ul>
+  </div>
+  <div id="content">
+    <h2 align="center">The Monkey and the Crocodile: Recreating the Story - Part B</h2>
+    <p>Build the second part of the story by choosing one of the three sentences. Use the <strong>A</strong>, <strong>B</strong>, or <strong>C</strong> buttons. If your choice is correct, the sentence will be added to the story.</p>
+    <form name="QuizForm" id="QuizForm" onsubmit="return false">
+      <table border="0">
+        <tr>
+          <td><input type="button" name="Check1" value="   A   " onclick="CheckAnswer(1)" /></td>
+          <td><input type="EDIT" name="Guess1" size="75" maxlength="80" onfocus="CheckAnswer(1); blur()" /></td>
+          <td><input type="EDIT" name="Result1" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check2" value="   B   " onclick="CheckAnswer(2)" /></td>
+          <td><input type="EDIT" name="Guess2" size="75" maxlength="80" onfocus="CheckAnswer(2); blur()" /></td>
+          <td><input type="EDIT" name="Result2" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check3" value="   C   " onclick="CheckAnswer(3)" /></td>
+          <td><input type="EDIT" name="Guess3" size="75" maxlength="80" onfocus="CheckAnswer(3); blur()" /></td>
+          <td><input type="EDIT" name="Result3" size="3" maxlength="3" /></td>
+        </tr>
+      </table>
+      <p>Score
+        <input type="text" name="ScoreBox" size="5" maxlength="5" />
+      </p>
+    </form>
+    <form name="StoryForm" id="StoryForm">
+      <textarea style="width:80%" name="Story" rows="18" cols="100" wrap="virtual"></textarea>
+      <p>
+        <input type="button" name="ReStart" value="Restart" onclick="Initialize()" />
+      </p>
+    </form>
+    <div id="exerciselink"><a href="the-monkey-and-the-crocodile3.html"><strong>Next exercise</strong></a></div>
+  </div>
+  <div id="footer">    <div class="topbutton"><a href="#top">Top of page</a></div>
+    <div class="sharebutton"> 
+      <!-- Share BEGIN --> 
+      <a class="a2a_dd" href="https://www.addtoany.com/share_save">Share this page ...</a> 
+      <script type="text/javascript" src="../../../../../../static.addtoany.com/menu/page.js"></script> 
+      <!-- Share END --> 
+    </div>
+<div id="footercontact"><strong>Comments?</strong> Visit the <a href="https://blog.uvcs.uvic.ca/elc-studyzone/feedback/" target="_blank"><strong>Feedback Page</strong></a> on our blog!<br />
+  Created by the <a href="https://www.uvic.ca/elc/" target="_blank"><strong>University of Victoria English Language Centre</strong></a><br />
+      <strong><a href="../../terms/index.html">Terms of Use</a></strong>&nbsp;&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_GB" target="_blank" rel="license"><img alt="Creative Commons Licence" class="cc" src="../../../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png" /></a>&nbsp;&nbsp;Published 2015</div>
+  </div>
+</div>
+</body>
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/the-monkey-and-the-crocodile2b.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:51 GMT -->
+</html>

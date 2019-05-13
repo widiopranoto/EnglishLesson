@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/the-tongue-cut-sparrow2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:56 GMT -->
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+<title>ELC Study Zone: The Tongue-cut Sparrow - Exercise 2</title>
+<style type="text/css">
+
+body{
+	font-family: 'Lucida Sans Unicode', Verdana, Geneva, Arial, Helvetica, sans-serif;
+	background-color: #ffffff;
+	/*color: #000000;*/
+ 
+/*	font-size: 90%; */
+}
+
+p{
+/*	text-align: left; 
+	margin: 0px;
+	font-size: 100%; */
+}
+
+
+table,div,span,td{
+	font-size: 100%;
+/*	color: #000000; */
+}
+
+
+div.Titles{
+/*	padding: 0.5em; */
+	text-align: center; 
+	color: #000000;
+}
+
+button{
+	font-family: 'Lucida Sans Unicode', Verdana,Geneva,Arial,sans-serif;
+	font-size: 100%;
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: 140%;
+	color: #000000;
+}
+
+.ExerciseSubtitle{
+	font-size: 120%;
+	color: #000000;
+}
+
+div.StdDiv{
+	background-color: #FFFFFF;
+	text-align: center;
+	font-size: 100%;
+	color: #000000;
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: #000000;
+	margin-bottom: 1px;
+}
+
+/* EndCorePageCSS */
+
+
+a{
+	color: #0000FF;
+}
+
+a:visited{
+	color: #0000CC;
+}
+
+a:hover{
+	color: #0000FF;
+}
+
+
+</style>
+
+<script language="JavaScript" type="text/javascript">
+
+var RightChar = ':-)';
+var WrongChar = 'X';
+var YourScoreIs = 'Your score is:';
+var DefaultPrompt = 'Which is the next part of the story?';
+var StorySoFar = '';
+
+var CurrentAnswer = '';
+var GuessesSoFar = 0;
+var CurrentNumber = 0;
+var CurrentCorrect = 0;
+var Points = 0;
+var TotalSegments = 0;
+var LastThree = '';
+var SwitchFlag = 'WholeText';
+
+var IndexButton = '<form method=post><INPUT TYPE=\"Button\" NAME=\"Index\" VALUE=\"Go back to contents\" onClick="parent.location=\'index.htm\'"></FORM>';
+//'<BR><FORM><INPUT TYPE=\"Button\" VALUE=\"[Index]\" onClick=\"parent.location=\'index.htm\'\"></FORM>';
+
+Segments = new Array();
+
+WinSegments = new Array();
+
+WinSegments[1] = 'A long time ago in Japan there lived an old farmer and his wife. The old man ';
+WinSegments[2] = 'was kind and gentle and always had a smile for everyone ';
+WinSegments[3] = 'he met, but his wife was cold and very bad-tempered. They had ';
+WinSegments[4] = 'no children to help them, so as they got older, they had to ';
+WinSegments[5] = 'work even harder just to survive. The old man found and tamed ';
+WinSegments[6] = 'a little sparrow, and taught it many kinds of tricks. When ';
+WinSegments[7] = 'he came in from the fields at the end of each day, the sparrow would welcome ';
+WinSegments[8] = 'him home, and sing and dance for him; so in spite of his hardships ';
+WinSegments[9] = 'the old man went to bed happy each night.\r\r';
+WinSegments[10] = 'One day the old man had to go far into the forest to cut ';
+WinSegments[11] = 'wood. It was laundry day, and his wife was in a bad mood as she ';
+WinSegments[12] = 'prepared the starch for the clothes and set it outside to cool. While she ';
+WinSegments[13] = 'was washing the clothes, the sparrow flew down to the starch and, as the old man ';
+WinSegments[14] = 'had taught it to, pecked at the starch until ';
+WinSegments[15] = 'it was gone. When the old woman came to get the starch and saw ';
+WinSegments[16] = 'that the sparrow had eaten it, she went into a rage. She ';
+WinSegments[17] = 'grabbed the bird in one hand and with the other she picked up ';
+WinSegments[18] = 'her scissors and cut off the tip of its tongue.  Then she ';
+WinSegments[19] = 'threw the sparrow out the door, and it flew away as fast as it could go. \r\r';
+WinSegments[20] = 'That night when the old man came home there was no sparrow to greet ';
+WinSegments[21] = 'him and warm his heart.  When he questioned his wife, she admitted ';
+WinSegments[22] = 'what she had done, adding, \"And good riddance! That bird ';
+WinSegments[23] = 'has always caused more work for me.\"  \r\r';
+WinSegments[24] = 'The poor man was devastated. Before dawn the next morning he took off to look ';
+WinSegments[25] = 'for his little sparrow.  He wandered through fields and forests, calling, \"Mr. Sparrow, Mr. Sparrow, ';
+WinSegments[26] = 'where are you now? How can I help you, my poor little tongue-cut sparrow?\" \r\r';
+WinSegments[27] = 'After a long time searching he came to a large bamboo wood, where ';
+WinSegments[28] = 'he finally met the sparrow again.  The old man ran forward to greet his little ';
+WinSegments[29] = 'pet. They talked for a while, and the old man could see that the sparrow no longer suffered ';
+WinSegments[30] = 'from any injury. The sparrow invited the old man home. He introduced his family and asked ';
+WinSegments[31] = 'his wife to prepare a delicious feast.  During the meal the sparrow\'s daughters danced and sang for ';
+WinSegments[32] = 'the old man.  It was the best hospitality the old man had ever experienced!  When it was time ';
+WinSegments[33] = 'for the old man to return home, the sparrow brought out two wicker baskets, one large and ';
+WinSegments[34] = 'one small. He said, \"Here is a parting gift for you. Choose the one you want.\"  \r\r';
+WinSegments[35] = '\"Thank you.\" said the old man, \"Since I\'m not as strong as ';
+WinSegments[36] = 'I used to be, and I have a long way to go, I\'ll take the smaller ';
+WinSegments[37] = 'one.\"  So he strapped the smaller one to his back and returned home. \r\r';
+WinSegments[38] = 'Immediately his wife began to scold him for being ';
+WinSegments[39] = 'away so long, and didn\'t stop until he opened the basket and onto their floor ';
+WinSegments[40] = 'spilled gold and silver and all kinds of precious jewels. With the sparrow\'s gift, they had ';
+WinSegments[41] = 'enough to be comfortable in their old age.  But the woman didn\'t stay happy ';
+WinSegments[42] = 'for long.  \"Why didn\'t you choose the bigger basket?\" she ';
+WinSegments[43] = 'scolded. \"Then we could be very rich indeed and live in a bigger ';
+WinSegments[44] = 'house and have servants. How could you be so stupid?\" \r\r';
+WinSegments[45] = 'The old woman decided to visit the sparrow. She went into ';
+WinSegments[46] = 'the forest and walked and walked until she found the sparrows\' house in the ';
+WinSegments[47] = 'bamboo wood. The sparrow and his family were not pleased to see ';
+WinSegments[48] = 'her, but they were kinder than she, so they invited her in. She ';
+WinSegments[49] = 'ate quickly and then called ';
+WinSegments[50] = 'for her gift. When the two baskets were set out before her she chose ';
+WinSegments[51] = 'the larger one.  Without even thanking them she strapped ';
+WinSegments[52] = 'it to her back and returned home. When she opened the basket a horde ';
+WinSegments[53] = 'of demons sprang out and tormented her to death. \r\r';
+WinSegments[54] = 'The old man was comfortable and happy for the rest of his days.'
+
+MacSegments = new Array();
+
+MacSegments[1] = 'A long time ago in Japan there lived an old farmer and his wife. The old man ';
+MacSegments[2] = 'was kind and gentle and always had a smile for everyone ';
+MacSegments[3] = 'he met, but his wife was cold and very bad-tempered. They had ';
+MacSegments[4] = 'no children to help them, so as they got older, they had to ';
+MacSegments[5] = 'work even harder just to survive. The old man found and tamed ';
+MacSegments[6] = 'a little sparrow, and taught it many kinds of tricks. When ';
+MacSegments[7] = 'he came in from the fields at the end of each day, the sparrow would welcome ';
+MacSegments[8] = 'him home, and sing and dance for him; so in spite of his hardships ';
+MacSegments[9] = 'the old man went to bed happy each night.\r\r';
+MacSegments[10] = 'One day the old man had to go far into the forest to cut ';
+MacSegments[11] = 'wood. It was laundry day, and his wife was in a bad mood as she ';
+MacSegments[12] = 'prepared the starch for the clothes and set it outside to cool. While she ';
+MacSegments[13] = 'was washing the clothes, the sparrow flew down to the starch and, as the old man ';
+MacSegments[14] = 'had taught it to, pecked at the starch until ';
+MacSegments[15] = 'it was gone. When the old woman came to get the starch and saw ';
+MacSegments[16] = 'that the sparrow had eaten it, she went into a rage. She ';
+MacSegments[17] = 'grabbed the bird in one hand and with the other she picked up ';
+MacSegments[18] = 'her scissors and cut off the tip of its tongue.  Then she ';
+MacSegments[19] = 'threw the sparrow out the door, and it flew away as fast as it could go. \r\r';
+MacSegments[20] = 'That night when the old man came home there was no sparrow to greet ';
+MacSegments[21] = 'him and warm his heart.  When he questioned his wife, she admitted ';
+MacSegments[22] = 'what she had done, adding, \"And good riddance! That bird ';
+MacSegments[23] = 'has always caused more work for me.\"  \r\r';
+MacSegments[24] = 'The poor man was devastated. Before dawn the next morning he took off to look ';
+MacSegments[25] = 'for his little sparrow.  He wandered through fields and forests, calling, \"Mr. Sparrow, Mr. Sparrow, ';
+MacSegments[26] = 'where are you now? How can I help you, my poor little tongue-cut sparrow?\" \r\r';
+MacSegments[27] = 'After a long time searching he came to a large bamboo wood, where ';
+MacSegments[28] = 'he finally met the sparrow again.  The old man ran forward to greet his little ';
+MacSegments[29] = 'pet. They talked for a while, and the old man could see that the sparrow no longer suffered ';
+MacSegments[30] = 'from any injury. The sparrow invited the old man home. He introduced his family and asked ';
+MacSegments[31] = 'his wife to prepare a delicious feast.  During the meal the sparrow\'s daughters danced and sang for ';
+MacSegments[32] = 'the old man.  It was the best hospitality the old man had ever experienced!  When it was time ';
+MacSegments[33] = 'for the old man to return home, the sparrow brought out two wicker baskets, one large and ';
+MacSegments[34] = 'one small. He said, \"Here is a parting gift for you. Choose the one you want.\"  \r\r';
+MacSegments[35] = '\"Thank you.\" said the old man, \"Since I\'m not as strong as ';
+MacSegments[36] = 'I used to be, and I have a long way to go, I\'ll take the smaller ';
+MacSegments[37] = 'one.\"  So he strapped the smaller one to his back and returned home. \r\r';
+MacSegments[38] = 'Immediately his wife began to scold him for being ';
+MacSegments[39] = 'away so long, and didn\'t stop until he opened the basket and onto their floor ';
+MacSegments[40] = 'spilled gold and silver and all kinds of precious jewels. With the sparrow\'s gift, they had ';
+MacSegments[41] = 'enough to be comfortable in their old age.  But the woman didn\'t stay happy ';
+MacSegments[42] = 'for long.  \"Why didn\'t you choose the bigger basket?\" she ';
+MacSegments[43] = 'scolded. \"Then we could be very rich indeed and live in a bigger ';
+MacSegments[44] = 'house and have servants. How could you be so stupid?\" \r\r';
+MacSegments[45] = 'The old woman decided to visit the sparrow. She went into ';
+MacSegments[46] = 'the forest and walked and walked until she found the sparrows\' house in the ';
+MacSegments[47] = 'bamboo wood. The sparrow and his family were not pleased to see ';
+MacSegments[48] = 'her, but they were kinder than she, so they invited her in. She ';
+MacSegments[49] = 'ate quickly and then called ';
+MacSegments[50] = 'for her gift. When the two baskets were set out before her she chose ';
+MacSegments[51] = 'the larger one.  Without even thanking them she strapped ';
+MacSegments[52] = 'it to her back and returned home. When she opened the basket a horde ';
+MacSegments[53] = 'of demons sprang out and tormented her to death. \r\r';
+MacSegments[54] = 'The old man was comfortable and happy for the rest of his days.'
+
+var platform = 'win';
+
+function Initialize(){
+
+	if (navigator.appVersion.indexOf('Mac') != -1) {
+		platform = 'mac';
+	}
+
+	if (platform == 'win'){
+		for (i = 1; i < WinSegments.length; i++){
+			Segments[i] = unescape(WinSegments[i]);
+		}
+	}
+	else {
+		for (i = 1; i < MacSegments.length; i++){
+			Segments[i] = unescape(MacSegments[i]);
+		}
+	}
+
+	TotalSegments = Segments.length - 1;
+
+	CurrentNumber = 1;
+	ShowQuestion();
+	Points = 0;
+	ThisQScore = 2;
+	document.StoryForm.Story.value = '';
+	StorySoFar = '';
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+}
+
+function ShowQuestion(){
+
+//Deal with the new paragraph thing
+
+	if (Segments[CurrentNumber] == '[NewPara]'){
+		StorySoFar += unescape('%0D%0A%0D%0A');
+		Segments[CurrentNumber] = unescape('%0D%0A%0D%0A');
+		Points += 2;
+		CurrentNumber++;
+	}
+
+//Deal with the last two segment situation
+	if (CurrentNumber == TotalSegments - 1){
+
+		var Temp = 1 + Math.floor(2 * Math.random());
+		document.QuizForm.Guess1.value = Segments[TotalSegments];
+		document.QuizForm.Guess2.value = Segments[TotalSegments];
+		document.QuizForm.Guess3.value = '';
+
+		document.QuizForm.elements[(Temp*Temp)].value = Segments[CurrentNumber];
+		CurrentCorrect = Temp;
+		CurrentAnswer = Segments[CurrentNumber];
+		ThisQScore = 1;
+		return;
+	}
+	
+
+	var FirstDistractor = 0;
+	var SecondDistractor = 0;
+	var Range = TotalSegments - CurrentNumber;
+
+
+	FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	while (Segments[FirstDistractor] == '[NewPara]'){
+		FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	SecondDistractor = FirstDistractor;
+	while ((SecondDistractor == FirstDistractor)||(Segments[SecondDistractor] == '[NewPara]')){
+		SecondDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	ThreeSegments = new Array(3);
+	ThreeSegments[1] = Segments[CurrentNumber];
+	ThreeSegments[2] = Segments[FirstDistractor];
+	ThreeSegments[3] = Segments[SecondDistractor];
+
+	CurrentAnswer = Segments[CurrentNumber];
+
+	MixedSegments = new Array(3);
+
+	var j = 3;
+	var i = 1;
+	var Temp = 0;
+	for (i = 1; i < 4; i++)  {
+
+		Temp = 1 + Math.floor(j  *  Math.random());
+		MixedSegments[i] = ThreeSegments[Temp];
+
+		for (k=Temp; k < j; k++) {
+			ThreeSegments[k] = ThreeSegments[k+1];
+		}
+		j = j - 1;
+	}
+
+	for (i=1; i<4; i++){
+		if (MixedSegments[i] == CurrentAnswer){
+			CurrentCorrect = i;
+		}
+	}
+
+	document.QuizForm.Guess1.value = MixedSegments[1];
+	document.QuizForm.Guess2.value = MixedSegments[2];
+	document.QuizForm.Guess3.value = MixedSegments[3];
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+
+// For long stories, show end of story	
+	document.getElementById('Story').scrollTop=document.getElementById('Story').scrollHeight;
+
+	ThisQScore = 2;
+	
+}
+
+function CheckAnswer(Chosen){
+
+	if (CurrentNumber == TotalSegments){
+		return;
+	}
+
+	if (CurrentCorrect == Chosen){
+		StorySoFar += CurrentAnswer;
+
+		if (CurrentNumber == 1){
+			LastThree = Segments[1];
+		}
+
+		if (CurrentNumber == 2){
+			LastThree = Segments[1] + Segments[2];
+		}
+
+		if (CurrentNumber > 2){
+				LastThree = Segments[CurrentNumber - 2] + Segments[CurrentNumber - 1] + Segments[CurrentNumber];
+		}
+
+
+		if (CurrentNumber == TotalSegments - 1){
+			StorySoFar += Segments[TotalSegments];
+			LastThree += Segments[TotalSegments];
+		}
+
+		if (SwitchFlag == 'WholeText'){
+			document.StoryForm.Story.value = StorySoFar;
+		}
+		else{
+			document.StoryForm.Story.value = LastThree;
+		}
+	
+		CurrentNumber++;
+		Points += ThisQScore;
+		
+		if (CurrentNumber < TotalSegments){
+			var CurrentScore = Math.floor(100*Points/(2*(CurrentNumber-1)));
+			document.QuizForm.ScoreBox.value = CurrentScore + '%';
+			ShowQuestion();
+		}
+		else{
+			document.QuizForm.Guess1.value = 'WELL DONE!';
+			document.QuizForm.Guess2.value = 'YOU HAVE COMPLETED';
+			document.QuizForm.Guess3.value = 'THE STORY!';
+			var FinalScore = Math.floor(100*Points/((2*TotalSegments) - 3));
+			document.QuizForm.ScoreBox.value = FinalScore + '%';
+		}	
+	}
+	else{
+		document.QuizForm.elements[(Chosen*3)-1].value = WrongChar;
+		document.QuizForm.ScoreBox.value = '';
+		if (ThisQScore > 0){
+			ThisQScore--;
+		}
+	}
+}
+
+function SwitchStuff(WhichButton){
+	SwitchFlag = WhichButton;
+	if (SwitchFlag == 'WholeText'){
+		document.StoryForm.Story.value = StorySoFar;
+	}
+	else{
+		document.StoryForm.Story.value = LastThree;
+	}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../css/sz-simple.css" />
+<link rel="stylesheet" type="text/css" href="../../css/sz-print.css" media="print" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28427007-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body onLoad="Initialize()">
+<div id="container">
+  <div id="header"><a name="top"></a>
+    <div id="uvic-elc"><a href="https://www.uvic.ca/"><img src="../../images/logo-uvic.gif" border="0" /></a><a href="../../index.html"><img src="../../images/logo-elc.gif" border="0" /></a></div>
+    <div id="sitetitle"><a href="../../index.html">Study Zone</a><br /></div>
+    <div id="searchbox">
+    <form action="https://web2.uvcs.uvic.ca/courses/elc/studyzone/results.htm" id="searchbox_013621260945567203807:sjxzc9x3aqa">
+      <input type="hidden" name="cx" value="013621260945567203807:sjxzc9x3aqa" />
+      <input type="hidden" name="cof" value="FORID:9" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="button" name="help" value="Help" id="helpbtn" class="searchbutton" onclick="location.href='../../help/index.html'" />
+        <input type="text" name="q" size="25" class="searchinput" />
+      <input type="submit" name="sa" value="Search" class="searchbutton" />
+          </form>
+  </div>
+  </div>
+  <div id="breadcrumb">
+    <ul>
+      <li class="homebutton"><a href="../../index.html">Home</a></li>
+      <li>&#187;&nbsp;<a href="../index.html">Level 330 &#8212; Lower Intermediate</a></li>
+      <li>&#187;&nbsp;<a href="index.html">Reading Topics</a></li>
+      <li>&#187;&nbsp;The Tongue-cut Sparrow: Exercise 2</li>
+    </ul>
+  </div>
+  <div id="content">
+    <h2 class="ExerciseTitle" align="center">The Tongue-cut Sparrow: Recreating the Story</h2>
+    <p>Build the story by choosing one of the three sentences. Use the <strong>A</strong>, <strong>B</strong>, or <strong>C</strong> buttons. If your choice is correct, the sentence will be added to the story.</p>
+    <form name="QuizForm" id="QuizForm" onsubmit="return false">
+      <table border="0">
+        <tr>
+          <td><input type="button" name="Check1" value="   A   " onclick="CheckAnswer(1)" /></td>
+          <td><input type="EDIT" name="Guess1" size="110" maxlength="120" onfocus="CheckAnswer(1); blur()" /></td>
+          <td><input type="EDIT" name="Result1" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check2" value="   B   " onclick="CheckAnswer(2)" /></td>
+          <td><input type="EDIT" name="Guess2" size="110" maxlength="120" onfocus="CheckAnswer(2); blur()" /></td>
+          <td><input type="EDIT" name="Result2" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check3" value="   C   " onclick="CheckAnswer(3)" /></td>
+          <td><input type="EDIT" name="Guess3" size="110" maxlength="120" onfocus="CheckAnswer(3); blur()" /></td>
+          <td><input type="EDIT" name="Result3" size="3" maxlength="3" /></td>
+        </tr>
+      </table>
+      <p>Score
+        <input type="text" name="ScoreBox" size="5" maxlength="5" />
+      </p>
+    </form>
+    <form name="StoryForm" id="StoryForm">
+      <textarea style="width:100%" id="Story" name="Story" rows="25" cols="100" wrap="virtual"></textarea>
+      <p>
+        <input type="button" name="ReStart" value="Restart" onclick="Initialize()" />
+      </p>
+    </form>
+    <div id="exerciselink"><a href="the-tongue-cut-sparrow3.html"><strong>Next exercise</strong></a></div>
+  </div>
+  <div id="footer">    <div class="topbutton"><a href="#top">Top of page</a></div>
+    <div class="sharebutton"> 
+      <!-- Share BEGIN --> 
+      <a class="a2a_dd" href="https://www.addtoany.com/share_save">Share this page ...</a> 
+      <script type="text/javascript" src="../../../../../../static.addtoany.com/menu/page.js"></script> 
+      <!-- Share END --> 
+    </div>
+<div id="footercontact"><strong>Comments?</strong> Visit the <a href="https://blog.uvcs.uvic.ca/elc-studyzone/feedback/" target="_blank"><strong>Feedback Page</strong></a> on our blog!<br />
+  Created by the <a href="https://www.uvic.ca/elc/" target="_blank"><strong>University of Victoria English Language Centre</strong></a><br />
+      <strong><a href="../../terms/index.html">Terms of Use</a></strong>&nbsp;&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_GB" target="_blank" rel="license"><img alt="Creative Commons Licence" class="cc" src="../../../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png" /></a>&nbsp;&nbsp;Published 2014</div>
+  </div>
+</div>
+</body>
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/the-tongue-cut-sparrow2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:56 GMT -->
+</html>

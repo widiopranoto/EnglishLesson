@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/the-magic-paintbrush2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:48 GMT -->
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+<title>ELC Study Zone: The Magic Paintbrush - Exercise 2</title>
+<style type="text/css">
+
+body{
+	font-family: 'Lucida Sans Unicode', Verdana, Geneva, Arial, Helvetica, sans-serif;
+	background-color: #ffffff;
+	/*color: #000000;*/
+ 
+/*	font-size: 90%; */
+}
+
+p{
+/*	text-align: left; 
+	margin: 0px;
+	font-size: 100%; */
+}
+
+
+table,div,span,td{
+	font-size: 100%;
+/*	color: #000000; */
+}
+
+
+div.Titles{
+/*	padding: 0.5em; */
+	text-align: center; 
+	color: #000000;
+}
+
+button{
+	font-family: 'Lucida Sans Unicode', Verdana,Geneva,Arial,sans-serif;
+	font-size: 100%;
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: 140%;
+	color: #000000;
+}
+
+.ExerciseSubtitle{
+	font-size: 120%;
+	color: #000000;
+}
+
+div.StdDiv{
+	background-color: #FFFFFF;
+	text-align: center;
+	font-size: 100%;
+	color: #000000;
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: #000000;
+	margin-bottom: 1px;
+}
+
+/* EndCorePageCSS */
+
+
+a{
+	color: #0000FF;
+}
+
+a:visited{
+	color: #0000CC;
+}
+
+a:hover{
+	color: #0000FF;
+}
+
+
+</style>
+<script language="JavaScript" type="text/javascript">
+
+var RightChar = ':-)';
+var WrongChar = 'X';
+var YourScoreIs = 'Your score is:';
+var DefaultPrompt = 'Which is the next part of the story?';
+var StorySoFar = '';
+
+var CurrentAnswer = '';
+var GuessesSoFar = 0;
+var CurrentNumber = 0;
+var CurrentCorrect = 0;
+var Points = 0;
+var TotalSegments = 0;
+var LastThree = '';
+var SwitchFlag = 'WholeText';
+
+var IndexButton = '<form method=post><INPUT TYPE=\"Button\" NAME=\"Index\" VALUE=\"Go back to contents\" onClick="parent.location=\'index.htm\'"></FORM>';
+//'<BR><FORM><INPUT TYPE=\"Button\" VALUE=\"[Index]\" onClick=\"parent.location=\'index.htm\'\"></FORM>';
+
+Segments = new Array();
+
+WinSegments = new Array();
+
+WinSegments[1] = 'A long time ago in China there lived a poor boy called Liang. He had ';
+WinSegments[2] = 'no family, so he made his living by doing odd jobs for other people in his ';
+WinSegments[3] = 'village, such as cutting wood and tending cattle. His life was difficult, but Liang was ';
+WinSegments[4] = 'a generous boy and always willing to help people who needed it. In his heart ';
+WinSegments[5] = 'he had a dream. He wanted to paint pictures and become a great artist. He practised ';
+WinSegments[6] = 'drawing all the time. When he was in the forest cutting ';
+WinSegments[7] = 'wood, he drew birds and animals with a stick. If he was looking after a farmers\' cows he drew ';
+WinSegments[8] = 'on the sides of the barn. Whatever he was ';
+WinSegments[9] = 'doing he drew – plants, animals, birds and ';
+WinSegments[10] = 'people. He thought of nothing else except drawing, and soon he became very good ';
+WinSegments[11] = 'at it. \r\rOne night Liang dreamed that an old man gave him a ';
+WinSegments[12] = 'paintbrush. The man said it was a magic paintbrush and Liang should use it ';
+WinSegments[13] = 'to help people. When Liang woke up the next morning, he was ';
+WinSegments[14] = 'surprised to see that he had a beautiful paintbrush in his hand. Liang ';
+WinSegments[15] = 'was hungry, so he painted a bowl of rice. Suddenly the rice ';
+WinSegments[16] = 'became real, and he ate it. Now he felt happy, ';
+WinSegments[17] = 'so he drew a bird. The bird came to life and flew away. \r\rWhen Liang went ';
+WinSegments[18] = 'into the village he met an old farmer carrying water from the river to ';
+WinSegments[19] = 'his field. It was a long walk and the man was ';
+WinSegments[20] = 'very tired. Liang painted a river beside the field and the river came to life. Now the farmer ';
+WinSegments[21] = 'could easily bring the water to his crops. Soon Liang met another villager who was crying because his cow ';
+WinSegments[22] = 'had died in the night, and there was no milk for his children. Liang drew a cow, and ';
+WinSegments[23] = 'it came to life. The villager was overjoyed and happily began to milk his cow. \r\rFrom that day Liang used ';
+WinSegments[24] = 'his paintbrush to help the people in his village. Whenever they needed something, Liang would paint ';
+WinSegments[25] = 'it. Soon the villagers began to prosper, and word of Liang\'s magic paintbrush began to travel ';
+WinSegments[26] = 'beyond the village. \r\rPeople asked him, \"Why don\'t you use ';
+WinSegments[27] = 'your magic paintbrush to become rich?\" \r\r\"What else do I need?\" replied ';
+WinSegments[28] = 'Liang. \"I feel rich because I can help.\" \r\rIt wasn\'t long before a rich man ';
+WinSegments[29] = 'who lived near the village heard about Liang\'s magic paintbrush, and thought he would ';
+WinSegments[30] = 'use it to make himself richer than the emperor. This man decided ';
+WinSegments[31] = 'to steal Liang\'s paintbrush. He sent some of his thugs to ';
+WinSegments[32] = 'Liang\'s home, where they captured Liang and put him in prison. The rich man ';
+WinSegments[33] = 'took the paintbrush. \r\rThe rich man wanted to show off his power so he ';
+WinSegments[34] = 'invited some friends to his house. He drew a lot of pictures, but not ';
+WinSegments[35] = 'one picture became real. The rich man figured there must be some special secret that he didn\'t ';
+WinSegments[36] = 'know about, so he sent for Liang. When Liang stood before him he ';
+WinSegments[37] = 'said, \"If you draw some pictures for me and they become real, I will let ';
+WinSegments[38] = 'you go free.\" \r\rLiang knew that this rich man was not ';
+WinSegments[39] = 'a good man. He didn\'t want to help, but he wanted to ';
+WinSegments[40] = 'be free. He had an idea. He said, \"I will help you, but you ';
+WinSegments[41] = 'must let me go.\" \r\r\"Paint me a golden mountain,\" said the rich man. \"I want to ';
+WinSegments[42] = 'go there and get lots of gold.\" What he didn\'t say out loud was, \"And then I will be the richest ';
+WinSegments[43] = 'man in the kingdom, richer even than the emperor himself!\" \r\rLiang drew a picture of ';
+WinSegments[44] = 'the sea. \r\r\"Why did you draw the sea?\" said the rich man, \"I told ';
+WinSegments[45] = 'you to draw the mountain. I want gold, not fish!\" \r\r\"The mountain ';
+WinSegments[46] = 'is on the other side of the sea.\" replied Liang. \"I\'ll show you.\" Liang ';
+WinSegments[47] = 'drew the golden mountain on the other side of the sea. \r\rWhen the rich man ';
+WinSegments[48] = 'saw the mountain shining in gold his eyes lit up like two ';
+WinSegments[49] = 'yellow suns. \"Yes!\" he said, \"That\'s much ';
+WinSegments[50] = 'better! But the mountain is far from here. How will I get ';
+WinSegments[51] = 'there?\" \r\r \"I\'ll draw you a boat to get to the mountain,\" said ';
+WinSegments[52] = 'Liang. And he drew a golden dragon boat that was even bigger and more ';
+WinSegments[53] = 'beautiful than the emperor\'s boat. The rich man climbed ';
+WinSegments[54] = 'aboard the boat and stood in the bow facing ';
+WinSegments[55] = 'the golden mountain. He said to Liang,\" Now draw me a wind to take ';
+WinSegments[56] = 'the boat to the mountain.\" Liang began to draw a ';
+WinSegments[57] = 'wind, and the boat set sail. The rich man stretched his arms ';
+WinSegments[58] = 'out to grab the golden mountain. \"Make ';
+WinSegments[59] = 'the wind stronger so I can get there faster,\" he said to Liang. Liang kept ';
+WinSegments[60] = 'drawing and the wind got stronger. Soon the wind became a terrible ';
+WinSegments[61] = 'gale and the rich man\'s beautiful boat sank beneath the sea and took him down ';
+WinSegments[62] = 'with it. \r\rPeople say that Liang married a beautiful girl ';
+WinSegments[63] = 'from his village and had a big family, and they were happy all their days.';
+
+MacSegments = new Array();
+
+MacSegments[1] = 'A long time ago in China there lived a poor boy called Liang. He had ';
+MacSegments[2] = 'no family, so he made his living by doing odd jobs for other people in his ';
+MacSegments[3] = 'village, such as cutting wood and tending cattle. His life was difficult, but Liang was ';
+MacSegments[4] = 'a generous boy and always willing to help people who needed it. In his heart ';
+MacSegments[5] = 'he had a dream. He wanted to paint pictures and become a great artist. He practised ';
+MacSegments[6] = 'drawing all the time. When he was in the forest cutting ';
+MacSegments[7] = 'wood, he drew birds and animals with a stick. If he was looking after a farmers\' cows he drew ';
+MacSegments[8] = 'on the sides of the barn. Whatever he was ';
+MacSegments[9] = 'doing he drew – plants, animals, birds and ';
+MacSegments[10] = 'people. He thought of nothing else except drawing, and soon he became very good ';
+MacSegments[11] = 'at it. \r\rOne night Liang dreamed that an old man gave him a ';
+MacSegments[12] = 'paintbrush. The man said it was a magic paintbrush and Liang should use it ';
+MacSegments[13] = 'to help people. When Liang woke up the next morning, he was ';
+MacSegments[14] = 'surprised to see that he had a beautiful paintbrush in his hand. Liang ';
+MacSegments[15] = 'was hungry, so he painted a bowl of rice. Suddenly the rice ';
+MacSegments[16] = 'became real, and he ate it. Now he felt happy, ';
+MacSegments[17] = 'so he drew a bird. The bird came to life and flew away. \r\rWhen Liang went ';
+MacSegments[18] = 'into the village he met an old farmer carrying water from the river to ';
+MacSegments[19] = 'his field. It was a long walk and the man was ';
+MacSegments[20] = 'very tired. Liang painted a river beside the field and the river came to life. Now the farmer ';
+MacSegments[21] = 'could easily bring the water to his crops. Soon Liang met another villager who was crying because his cow ';
+MacSegments[22] = 'had died in the night, and there was no milk for his children. Liang drew a cow, and ';
+MacSegments[23] = 'it came to life. The villager was overjoyed and happily began to milk his cow. \r\rFrom that day Liang used ';
+MacSegments[24] = 'his paintbrush to help the people in his village. Whenever they needed something, Liang would paint ';
+MacSegments[25] = 'it. Soon the villagers began to prosper, and word of Liang\'s magic paintbrush began to travel ';
+MacSegments[26] = 'beyond the village. \r\rPeople asked him, \"Why don\'t you use ';
+MacSegments[27] = 'your magic paintbrush to become rich?\" \r\r\"What else do I need?\" replied ';
+MacSegments[28] = 'Liang. \"I feel rich because I can help.\" \r\rIt wasn\'t long before a rich man ';
+MacSegments[29] = 'who lived near the village heard about Liang\'s magic paintbrush, and thought he would ';
+MacSegments[30] = 'use it to make himself richer than the emperor. This man decided ';
+MacSegments[31] = 'to steal Liang\'s paintbrush. He sent some of his thugs to ';
+MacSegments[32] = 'Liang\'s home, where they captured Liang and put him in prison. The rich man ';
+MacSegments[33] = 'took the paintbrush. \r\rThe rich man wanted to show off his power so he ';
+MacSegments[34] = 'invited some friends to his house. He drew a lot of pictures, but not ';
+MacSegments[35] = 'one picture became real. The rich man figured there must be some special secret that he didn\'t ';
+MacSegments[36] = 'know about, so he sent for Liang. When Liang stood before him he ';
+MacSegments[37] = 'said, \"If you draw some pictures for me and they become real, I will let ';
+MacSegments[38] = 'you go free.\" \r\rLiang knew that this rich man was not ';
+MacSegments[39] = 'a good man. He didn\'t want to help, but he wanted to ';
+MacSegments[40] = 'be free. He had an idea. He said, \"I will help you, but you ';
+MacSegments[41] = 'must let me go.\" \r\r\"Paint me a golden mountain,\" said the rich man. \"I want to ';
+MacSegments[42] = 'go there and get lots of gold.\" What he didn\'t say out loud was, \"And then I will be the richest ';
+MacSegments[43] = 'man in the kingdom, richer even than the emperor himself!\" \r\rLiang drew a picture of ';
+MacSegments[44] = 'the sea. \r\r\"Why did you draw the sea?\" said the rich man, \"I told ';
+MacSegments[45] = 'you to draw the mountain. I want gold, not fish!\" \r\r\"The mountain ';
+MacSegments[46] = 'is on the other side of the sea.\" replied Liang. \"I\'ll show you.\" Liang ';
+MacSegments[47] = 'drew the golden mountain on the other side of the sea. \r\rWhen the rich man ';
+MacSegments[48] = 'saw the mountain shining in gold his eyes lit up like two ';
+MacSegments[49] = 'yellow suns. \"Yes!\" he said, \"That\'s much ';
+MacSegments[50] = 'better! But the mountain is far from here. How will I get ';
+MacSegments[51] = 'there?\" \r\r\"I\'ll draw you a boat to get to the mountain,\" said ';
+MacSegments[52] = 'Liang. And he drew a golden dragon boat that was even bigger and more ';
+MacSegments[53] = 'beautiful than the emperor\'s boat. The rich man climbed ';
+MacSegments[54] = 'aboard the boat and stood in the bow facing ';
+MacSegments[55] = 'the golden mountain. He said to Liang,\" Now draw me a wind to take ';
+MacSegments[56] = 'the boat to the mountain.\" Liang began to draw a ';
+MacSegments[57] = 'wind, and the boat set sail. The rich man stretched his arms ';
+MacSegments[58] = 'out to grab the golden mountain. \"Make ';
+MacSegments[59] = 'the wind stronger so I can get there faster,\" he said to Liang. Liang kept ';
+MacSegments[60] = 'drawing and the wind got stronger. Soon the wind became a terrible ';
+MacSegments[61] = 'gale and the rich man\'s beautiful boat sank beneath the sea and took him down ';
+MacSegments[62] = 'with it. \r\rPeople say that Liang married a beautiful girl ';
+MacSegments[63] = 'from his village and had a big family, and they were happy all their days.';
+
+var platform = 'win';
+
+function Initialize(){
+
+	if (navigator.appVersion.indexOf('Mac') != -1) {
+		platform = 'mac';
+	}
+
+	if (platform == 'win'){
+		for (i = 1; i < WinSegments.length; i++){
+			Segments[i] = unescape(WinSegments[i]);
+		}
+	}
+	else {
+		for (i = 1; i < MacSegments.length; i++){
+			Segments[i] = unescape(MacSegments[i]);
+		}
+	}
+
+	TotalSegments = Segments.length - 1;
+
+	CurrentNumber = 1;
+	ShowQuestion();
+	Points = 0;
+	ThisQScore = 2;
+	document.StoryForm.Story.value = '';
+	StorySoFar = '';
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+}
+
+function ShowQuestion(){
+
+//Deal with the new paragraph thing
+
+	if (Segments[CurrentNumber] == '[NewPara]'){
+		StorySoFar += unescape('%0D%0A%0D%0A');
+		Segments[CurrentNumber] = unescape('%0D%0A%0D%0A');
+		Points += 2;
+		CurrentNumber++;
+	}
+
+//Deal with the last two segment situation
+	if (CurrentNumber == TotalSegments - 1){
+
+		var Temp = 1 + Math.floor(2 * Math.random());
+		document.QuizForm.Guess1.value = Segments[TotalSegments];
+		document.QuizForm.Guess2.value = Segments[TotalSegments];
+		document.QuizForm.Guess3.value = '';
+
+		document.QuizForm.elements[(Temp*Temp)].value = Segments[CurrentNumber];
+		CurrentCorrect = Temp;
+		CurrentAnswer = Segments[CurrentNumber];
+		ThisQScore = 1;
+		return;
+	}
+	
+
+	var FirstDistractor = 0;
+	var SecondDistractor = 0;
+	var Range = TotalSegments - CurrentNumber;
+
+
+	FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	while (Segments[FirstDistractor] == '[NewPara]'){
+		FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	SecondDistractor = FirstDistractor;
+	while ((SecondDistractor == FirstDistractor)||(Segments[SecondDistractor] == '[NewPara]')){
+		SecondDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	ThreeSegments = new Array(3);
+	ThreeSegments[1] = Segments[CurrentNumber];
+	ThreeSegments[2] = Segments[FirstDistractor];
+	ThreeSegments[3] = Segments[SecondDistractor];
+
+	CurrentAnswer = Segments[CurrentNumber];
+
+	MixedSegments = new Array(3);
+
+	var j = 3;
+	var i = 1;
+	var Temp = 0;
+	for (i = 1; i < 4; i++)  {
+
+		Temp = 1 + Math.floor(j  *  Math.random());
+		MixedSegments[i] = ThreeSegments[Temp];
+
+		for (k=Temp; k < j; k++) {
+			ThreeSegments[k] = ThreeSegments[k+1];
+		}
+		j = j - 1;
+	}
+
+	for (i=1; i<4; i++){
+		if (MixedSegments[i] == CurrentAnswer){
+			CurrentCorrect = i;
+		}
+	}
+
+	document.QuizForm.Guess1.value = MixedSegments[1];
+	document.QuizForm.Guess2.value = MixedSegments[2];
+	document.QuizForm.Guess3.value = MixedSegments[3];
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+
+// For long stories, show end of story	
+	document.getElementById('Story').scrollTop=document.getElementById('Story').scrollHeight;
+
+	ThisQScore = 2;
+	
+}
+
+function CheckAnswer(Chosen){
+
+	if (CurrentNumber == TotalSegments){
+		return;
+	}
+
+	if (CurrentCorrect == Chosen){
+		StorySoFar += CurrentAnswer;
+
+		if (CurrentNumber == 1){
+			LastThree = Segments[1];
+		}
+
+		if (CurrentNumber == 2){
+			LastThree = Segments[1] + Segments[2];
+		}
+
+		if (CurrentNumber > 2){
+				LastThree = Segments[CurrentNumber - 2] + Segments[CurrentNumber - 1] + Segments[CurrentNumber];
+		}
+
+
+		if (CurrentNumber == TotalSegments - 1){
+			StorySoFar += Segments[TotalSegments];
+			LastThree += Segments[TotalSegments];
+		}
+
+		if (SwitchFlag == 'WholeText'){
+			document.StoryForm.Story.value = StorySoFar;
+		}
+		else{
+			document.StoryForm.Story.value = LastThree;
+		}
+	
+		CurrentNumber++;
+		Points += ThisQScore;
+		
+		if (CurrentNumber < TotalSegments){
+			var CurrentScore = Math.floor(100*Points/(2*(CurrentNumber-1)));
+			document.QuizForm.ScoreBox.value = CurrentScore + '%';
+			ShowQuestion();
+		}
+		else{
+			document.QuizForm.Guess1.value = 'WELL DONE!';
+			document.QuizForm.Guess2.value = 'YOU HAVE COMPLETED';
+			document.QuizForm.Guess3.value = 'THE STORY!';
+			var FinalScore = Math.floor(100*Points/((2*TotalSegments) - 3));
+			document.QuizForm.ScoreBox.value = FinalScore + '%';
+		}	
+	}
+	else{
+		document.QuizForm.elements[(Chosen*3)-1].value = WrongChar;
+		document.QuizForm.ScoreBox.value = '';
+		if (ThisQScore > 0){
+			ThisQScore--;
+		}
+	}
+}
+
+function SwitchStuff(WhichButton){
+	SwitchFlag = WhichButton;
+	if (SwitchFlag == 'WholeText'){
+		document.StoryForm.Story.value = StorySoFar;
+	}
+	else{
+		document.StoryForm.Story.value = LastThree;
+	}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../css/sz-simple.css" />
+<link rel="stylesheet" type="text/css" href="../../css/sz-print.css" media="print" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28427007-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body onLoad="Initialize()">
+<div id="container">
+  <div id="header"><a name="top"></a>
+    <div id="uvic-elc"><a href="https://www.uvic.ca/"><img src="../../images/logo-uvic.gif" border="0" /></a><a href="../../index.html"><img src="../../images/logo-elc.gif" border="0" /></a></div>
+    <div id="sitetitle"><a href="../../index.html">Study Zone</a><br /></div>
+    <div id="searchbox">
+    <form action="https://web2.uvcs.uvic.ca/courses/elc/studyzone/results.htm" id="searchbox_013621260945567203807:sjxzc9x3aqa">
+      <input type="hidden" name="cx" value="013621260945567203807:sjxzc9x3aqa" />
+      <input type="hidden" name="cof" value="FORID:9" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="button" name="help" value="Help" id="helpbtn" class="searchbutton" onclick="location.href='../../help/index.html'" />
+        <input type="text" name="q" size="25" class="searchinput" />
+      <input type="submit" name="sa" value="Search" class="searchbutton" />
+          </form>
+  </div>
+  </div>
+  <div id="breadcrumb">
+    <ul>
+      <li class="homebutton"><a href="../../index.html">Home</a></li>
+      <li>&#187;&nbsp;<a href="../index.html">Level 330 &#8212; Lower Intermediate</a></li>
+      <li>&#187;&nbsp;<a href="index.html">Reading Topics</a></li>
+      <li>&#187;&nbsp;The Magic Paintbrush: Exercise 2</li>
+    </ul>
+  </div>
+  <div id="content">
+    <h2 class="ExerciseTitle" align="center">The Magic Paintbrush: Recreating the Story</h2>
+    <p>Build the story by choosing one of the three sentences. Use the <strong>A</strong>, <strong>B</strong>, or <strong>C</strong> buttons. If your choice is correct, the sentence will be added to the story.</p>
+    <form name="QuizForm" id="QuizForm" onsubmit="return false">
+      <table border="0">
+        <tr>
+          <td><input type="button" name="Check1" value="   A   " onclick="CheckAnswer(1)" /></td>
+          <td><input type="EDIT" name="Guess1" size="110" maxlength="120" onfocus="CheckAnswer(1); blur()" /></td>
+          <td><input type="EDIT" name="Result1" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check2" value="   B   " onclick="CheckAnswer(2)" /></td>
+          <td><input type="EDIT" name="Guess2" size="110" maxlength="120" onfocus="CheckAnswer(2); blur()" /></td>
+          <td><input type="EDIT" name="Result2" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check3" value="   C   " onclick="CheckAnswer(3)" /></td>
+          <td><input type="EDIT" name="Guess3" size="110" maxlength="120" onfocus="CheckAnswer(3); blur()" /></td>
+          <td><input type="EDIT" name="Result3" size="3" maxlength="3" /></td>
+        </tr>
+      </table>
+      <p>Score
+        <input type="text" name="ScoreBox" size="5" maxlength="5" />
+      </p>
+    </form>
+    <form name="StoryForm" id="StoryForm">
+      <textarea style="width:100%" id="Story" name="Story" rows="25" cols="100" wrap="virtual"></textarea>
+      <p>
+        <input type="button" name="ReStart" value="Restart" onclick="Initialize()" />
+      </p>
+    </form>
+    <div id="exerciselink"><a href="the-magic-paintbrush3.html"><strong>Next exercise</strong></a></div>
+  </div>
+  <div id="footer">    <div class="topbutton"><a href="#top">Top of page</a></div>
+    <div class="sharebutton"> 
+      <!-- Share BEGIN --> 
+      <a class="a2a_dd" href="https://www.addtoany.com/share_save">Share this page ...</a> 
+      <script type="text/javascript" src="../../../../../../static.addtoany.com/menu/page.js"></script> 
+      <!-- Share END --> 
+    </div>
+<div id="footercontact"><strong>Comments?</strong> Visit the <a href="https://blog.uvcs.uvic.ca/elc-studyzone/feedback/" target="_blank"><strong>Feedback Page</strong></a> on our blog!<br />
+  Created by the <a href="https://www.uvic.ca/elc/" target="_blank"><strong>University of Victoria English Language Centre</strong></a><br />
+      <strong><a href="../../terms/index.html">Terms of Use</a></strong>&nbsp;&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_GB" target="_blank" rel="license"><img alt="Creative Commons Licence" class="cc" src="../../../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png" /></a>&nbsp;&nbsp;Published 2014</div>
+  </div>
+</div>
+</body>
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/the-magic-paintbrush2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:48 GMT -->
+</html>

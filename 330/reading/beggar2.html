@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/beggar2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:45 GMT -->
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+<title>ELC Study Zone: Nasreddin and the Beggar Exercise 2</title>
+<script language="JavaScript" type="text/javascript">
+
+var RightChar = ':-)';
+var WrongChar = 'X';
+var StorySoFar = '';
+
+var CurrentAnswer = '';
+var GuessesSoFar = 0;
+var CurrentNumber = 0;
+var CurrentCorrect = 0;
+var Points = 0;
+var TotalSegments = 0;
+var LastThree = '';
+var SwitchFlag = 'WholeText';
+
+Segments = new Array();
+
+WinSegments = new Array();
+
+WinSegments[1] = 'One day, Nasreddin was up on the ';
+WinSegments[2] = 'roof of his house, mending a hole ';
+WinSegments[3] = 'in the tiles. He had nearly finished, ';
+WinSegments[4] = 'and he was pleased with his work. ';
+WinSegments[5] = 'Suddenly, he heard a voice below call ';
+WinSegments[6] = '"Hello!" When he looked down, Nasreddin saw ';
+WinSegments[7] = 'an old man in dirty clothes standing ';
+WinSegments[8] = 'below. ';
+WinSegments[9] = '[NewPara]';
+WinSegments[10] = '"What do you want?" asked Nasreddin. ';
+WinSegments[11] = '[NewPara]';
+WinSegments[12] = '"Come down and I\'ll tell you," called ';
+WinSegments[13] = 'the man. ';
+WinSegments[14] = '[NewPara]';
+WinSegments[15] = 'Nasreddin was annoyed, but he was a ';
+WinSegments[16] = 'polite man, so he put down his ';
+WinSegments[17] = 'tools. Carefully, he climbed all the way ';
+WinSegments[18] = 'down to the ground. ';
+WinSegments[19] = '[NewPara]';
+WinSegments[20] = '"What do you want?" he asked, when ';
+WinSegments[21] = 'he reached the ground. ';
+WinSegments[22] = '[NewPara]';
+WinSegments[23] = '"Could you spare a little money for ';
+WinSegments[24] = 'an old beggar?" asked the old man. ';
+WinSegments[25] = 'Nasreddin thought for a minute. ';
+WinSegments[26] = '[NewPara]';
+WinSegments[27] = 'Then he said, "Come with me." He ';
+WinSegments[28] = 'began climbing the ladder again. The old ';
+WinSegments[29] = 'man followed him all the way to ';
+WinSegments[30] = 'the top. When they were both sitting ';
+WinSegments[31] = 'on the roof, Nasreddin turned to the ';
+WinSegments[32] = 'beggar. ';
+WinSegments[33] = '[NewPara]';
+WinSegments[34] = '"No," ';
+WinSegments[35] = 'he said. ';
+
+
+MacSegments = new Array();
+
+MacSegments[1] = 'One day, Nasreddin was up on the ';
+MacSegments[2] = 'roof of his house, mending a hole ';
+MacSegments[3] = 'in the tiles. He had nearly finished, ';
+MacSegments[4] = 'and he was pleased with his work. ';
+MacSegments[5] = 'Suddenly, he heard a voice below call ';
+MacSegments[6] = '"Hello!" When he looked down, Nasreddin saw ';
+MacSegments[7] = 'an old man in dirty clothes standing ';
+MacSegments[8] = 'below. ';
+MacSegments[9] = '[NewPara]';
+MacSegments[10] = '"What do you want?" asked Nasreddin. ';
+MacSegments[11] = '[NewPara]';
+MacSegments[12] = '"Come down and I\'ll tell you," called ';
+MacSegments[13] = 'the man. ';
+MacSegments[14] = '[NewPara]';
+MacSegments[15] = 'Nasreddin was annoyed, but he was a ';
+MacSegments[16] = 'polite man, so he put down his ';
+MacSegments[17] = 'tools. Carefully, he climbed all the way ';
+MacSegments[18] = 'down to the ground. ';
+MacSegments[19] = '[NewPara]';
+MacSegments[20] = '"What do you want?" he asked, when ';
+MacSegments[21] = 'he reached the ground. ';
+MacSegments[22] = '[NewPara]';
+MacSegments[23] = '"Could you spare a little money for ';
+MacSegments[24] = 'an old beggar?" asked the old man. ';
+MacSegments[25] = 'Nasreddin thought for a minute. ';
+MacSegments[26] = '[NewPara]';
+MacSegments[27] = 'Then he said, "Come with me." He ';
+MacSegments[28] = 'began climbing the ladder again. The old ';
+MacSegments[29] = 'man followed him all the way to ';
+MacSegments[30] = 'the top. When they were both sitting ';
+MacSegments[31] = 'on the roof, Nasreddin turned to the ';
+MacSegments[32] = 'beggar. ';
+MacSegments[33] = '[NewPara]';
+MacSegments[34] = '"No," ';
+MacSegments[35] = 'he said. ';
+
+
+var platform = 'win';
+
+function Initialize(){
+
+	if (navigator.appVersion.indexOf('Mac') != -1) {
+		platform = 'mac';
+	}
+
+	if (platform == 'win'){
+		for (i = 1; i < WinSegments.length; i++){
+			Segments[i] = unescape(WinSegments[i]);
+		}
+	}
+	else {
+		for (i = 1; i < MacSegments.length; i++){
+			Segments[i] = unescape(MacSegments[i]);
+		}
+	}
+
+	TotalSegments = Segments.length - 1;
+
+	CurrentNumber = 1;
+	ShowQuestion();
+	Points = 0;
+	ThisQScore = 2;
+	document.StoryForm.Story.value = '';
+	StorySoFar = '';
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+
+}
+
+function ShowQuestion(){
+
+//Deal with the new paragraph thing
+
+	if (Segments[CurrentNumber] == '[NewPara]'){
+		StorySoFar += unescape('%0D%0A%0D%0A');
+		Segments[CurrentNumber] = unescape('%0D%0A%0D%0A');
+		Points += 2;
+		CurrentNumber++;
+	}
+
+//Deal with the last two segment situation
+	if (CurrentNumber == TotalSegments - 1){
+
+		var Temp = 1 + Math.floor(2 * Math.random());
+		document.QuizForm.Guess1.value = Segments[TotalSegments];
+		document.QuizForm.Guess2.value = Segments[TotalSegments];
+		document.QuizForm.Guess3.value = '';
+
+		document.QuizForm.elements[(Temp*Temp)].value = Segments[CurrentNumber];
+		CurrentCorrect = Temp;
+		CurrentAnswer = Segments[CurrentNumber];
+		ThisQScore = 1;
+		return;
+	}
+	
+
+	var FirstDistractor = 0;
+	var SecondDistractor = 0;
+	var Range = TotalSegments - CurrentNumber;
+
+
+	FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	while (Segments[FirstDistractor] == '[NewPara]'){
+		FirstDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	SecondDistractor = FirstDistractor;
+	while ((SecondDistractor == FirstDistractor)||(Segments[SecondDistractor] == '[NewPara]')){
+		SecondDistractor = (CurrentNumber + 1) + Math.floor(Range  *  Math.random());
+	}
+
+	ThreeSegments = new Array(3);
+	ThreeSegments[1] = Segments[CurrentNumber];
+	ThreeSegments[2] = Segments[FirstDistractor];
+	ThreeSegments[3] = Segments[SecondDistractor];
+
+	CurrentAnswer = Segments[CurrentNumber];
+
+	MixedSegments = new Array(3);
+
+	var j = 3;
+	var i = 1;
+	var Temp = 0;
+	for (i = 1; i < 4; i++)  {
+
+		Temp = 1 + Math.floor(j  *  Math.random());
+		MixedSegments[i] = ThreeSegments[Temp];
+
+		for (k=Temp; k < j; k++) {
+			ThreeSegments[k] = ThreeSegments[k+1];
+		}
+		j = j - 1;
+	}
+
+	for (i=1; i<4; i++){
+		if (MixedSegments[i] == CurrentAnswer){
+			CurrentCorrect = i;
+		}
+	}
+
+	document.QuizForm.Guess1.value = MixedSegments[1];
+	document.QuizForm.Guess2.value = MixedSegments[2];
+	document.QuizForm.Guess3.value = MixedSegments[3];
+	document.QuizForm.Result1.value = '';
+	document.QuizForm.Result2.value = '';
+	document.QuizForm.Result3.value = '';
+
+	ThisQScore = 2;
+
+}
+
+function CheckAnswer(Chosen){
+
+	if (CurrentNumber == TotalSegments){
+		return;
+	}
+
+	if (CurrentCorrect == Chosen){
+		StorySoFar += CurrentAnswer;
+
+		if (CurrentNumber == 1){
+			LastThree = Segments[1];
+		}
+
+		if (CurrentNumber == 2){
+			LastThree = Segments[1] + Segments[2];
+		}
+
+		if (CurrentNumber > 2){
+				LastThree = Segments[CurrentNumber - 2] + Segments[CurrentNumber - 1] + Segments[CurrentNumber];
+		}
+
+
+		if (CurrentNumber == TotalSegments - 1){
+			StorySoFar += Segments[TotalSegments];
+			LastThree += Segments[TotalSegments];
+		}
+
+		if (SwitchFlag == 'WholeText'){
+			document.StoryForm.Story.value = StorySoFar;
+		}
+		else{
+			document.StoryForm.Story.value = LastThree;
+		}
+	
+		CurrentNumber++;
+		Points += ThisQScore;
+		
+		if (CurrentNumber < TotalSegments){
+			var CurrentScore = Math.floor(100*Points/(2*(CurrentNumber-1)));
+			document.QuizForm.ScoreBox.value = CurrentScore + '%';
+			ShowQuestion();
+		}
+		else{
+			document.QuizForm.Guess1.value = RightChar;
+			document.QuizForm.Guess2.value = RightChar;
+			document.QuizForm.Guess3.value = RightChar;
+			document.QuizForm.Result1.value = RightChar;
+			document.QuizForm.Result2.value = RightChar;
+			document.QuizForm.Result3.value = RightChar;
+			var FinalScore = Math.floor(100*Points/((2*TotalSegments) - 3));
+			document.QuizForm.ScoreBox.value = FinalScore + '%';
+		}	
+	}
+	else{
+		document.QuizForm.elements[(Chosen*3)-1].value = WrongChar;
+		document.QuizForm.ScoreBox.value = '';
+		if (ThisQScore > 0){
+			ThisQScore--;
+		}
+	}
+}
+
+function SwitchStuff(WhichButton){
+	SwitchFlag = WhichButton;
+	if (SwitchFlag == 'WholeText'){
+		document.StoryForm.Story.value = StorySoFar;
+	}
+	else{
+		document.StoryForm.Story.value = LastThree;
+	}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../css/sz-simple.css" />
+<link rel="stylesheet" type="text/css" href="../../css/sz-print.css" media="print" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28427007-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body onload="Initialize()">
+<div id="container">
+<div id="header"><a name="top" id="top"></a>
+  <div id="uvic-elc"><a href="https://www.uvic.ca/"><img src="../../images/logo-uvic.gif" border="0" /></a><a href="../../index.html"><img src="../../images/logo-elc.gif" border="0" /></a></div>
+  <div id="sitetitle"><a href="../../index.html">Study Zone</a><br />
+  </div>
+  <div id="searchbox">
+    <form action="https://web2.uvcs.uvic.ca/courses/elc/studyzone/results.htm" id="searchbox_013621260945567203807:sjxzc9x3aqa">
+      <input type="hidden" name="cx" value="013621260945567203807:sjxzc9x3aqa" />
+      <input type="hidden" name="cof" value="FORID:9" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="button" name="help" value="Help" id="helpbtn" class="searchbutton" onclick="location.href='../../help/index.html'" />
+        <input type="text" name="q" size="25" class="searchinput" />
+      <input type="submit" name="sa" value="Search" class="searchbutton" />
+    </form>
+  </div>
+</div>
+<div id="breadcrumb">
+  <ul>
+    <li class="homebutton"><a href="../../index.html">Home</a></li>
+    <li>&#187;&nbsp;<a href="../index.html">Level 330 &#8212; Lower Intermediate</a></li>
+    <li>&#187;&nbsp;<a href="index.html">Reading Topics</a></li>
+    <li>&#187;&nbsp;Reading Exercise 2</li>
+  </ul>
+</div>
+<div id="content">
+<h2 align="center">Nasreddin and the Beggar: Recreating the Story</h2>
+<p>Build the story by choosing one of the three sentences. Use the <strong>A</strong>, <strong>B</strong>, or <strong>C</strong> buttons. If your choice is correct, the sentence will be added to the story.</p>
+    <form name="QuizForm" id="QuizForm" onsubmit="return false">
+      <table border="0">
+        <tr>
+          <td><input type="button" name="Check1" value="   A   " onclick="CheckAnswer(1)" /></td>
+          <td><input type="EDIT" name="Guess1" size="50" maxlength="60" onfocus="CheckAnswer(1); blur()" /></td>
+          <td><input type="EDIT" name="Result1" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check2" value="   B   " onclick="CheckAnswer(2)" /></td>
+          <td><input type="EDIT" name="Guess2" size="50" maxlength="60" onfocus="CheckAnswer(2); blur()" /></td>
+          <td><input type="EDIT" name="Result2" size="3" maxlength="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="Check3" value="   C   " onclick="CheckAnswer(3)" /></td>
+          <td><input type="EDIT" name="Guess3" size="50" maxlength="60" onfocus="CheckAnswer(3); blur()" /></td>
+          <td><input type="EDIT" name="Result3" size="3" maxlength="3" /></td>
+        </tr>
+      </table>
+      <p>Score
+        <input type="text" name="ScoreBox" size="5" maxlength="5" />
+      </p>
+    </form>
+    <form name="StoryForm" id="StoryForm">
+      <textarea style="width:80%" name="Story" rows="14" cols="100" wrap="virtual"></textarea>
+      <p>
+        <input type="button" name="ReStart" value="Restart" onclick="Initialize()" />
+      </p>
+      <p>&nbsp;</p>
+    </form>
+    <div id="exerciselink"><a href="beggar3.html"><strong>Next exercise</strong></a></div>
+  </div>
+  <div id="footer">    <div class="topbutton"><a href="#top">Top of page</a></div>
+    <div class="sharebutton"> 
+      <!-- Share BEGIN --> 
+      <a class="a2a_dd" href="https://www.addtoany.com/share_save">Share this page ...</a> 
+      <script type="text/javascript" src="../../../../../../static.addtoany.com/menu/page.js"></script> 
+      <!-- Share END --> 
+    </div>
+<div id="footercontact"><strong>Comments?</strong> Visit the <a href="https://blog.uvcs.uvic.ca/elc-studyzone/feedback/" target="_blank"><strong>Feedback Page</strong></a> on our blog!<br />
+  Created by the <a href="https://www.uvic.ca/elc/" target="_blank"><strong>University of Victoria English Language Centre</strong></a><br />
+      <strong><a href="../../terms/index.html">Terms of Use</a></strong>&nbsp;&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_GB" target="_blank" rel="license"><img alt="Creative Commons Licence" class="cc" src="../../../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png" /></a>&nbsp;&nbsp;Published 1998, Revised 2011</div>
+  </div>
+</div>
+</body>
+
+<!-- Mirrored from web2.uvcs.uvic.ca/courses/elc/studyzone/330/reading/beggar2.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 12:26:45 GMT -->
+</html>
